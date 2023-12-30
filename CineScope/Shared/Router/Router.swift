@@ -10,6 +10,7 @@ import SwiftUI
 class Router: ObservableObject {
     public enum Destination: Codable, Hashable {
         case login
+        case registration
         case tabBar
     }
     

@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct CineScopeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     @ObservedObject var router = Router()
     
     var body: some Scene {
@@ -19,6 +22,9 @@ struct CineScopeApp: App {
                         switch destination {
                         case .login:
                             LoginView()
+                                .navigationBarBackButtonHidden(true)
+                        case .registration:
+                            RegistrationView()
                         case .tabBar:
                             EmptyView()
                         }

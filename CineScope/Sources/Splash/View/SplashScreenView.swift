@@ -19,6 +19,11 @@ struct SplashScreenView: View {
                 .frame(width: 250, height: 250)
         }
         .ignoresSafeArea()
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                router.navigate(to: .login)
+            }
+        }
     }
 }
 

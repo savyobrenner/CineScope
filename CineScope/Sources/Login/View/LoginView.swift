@@ -30,7 +30,7 @@ struct LoginView: View {
                 
                 CSTextField(
                     stateObservable: $password,
-                    inputFieldPlaceholder: "Senha",
+                    inputFieldPlaceholder: "Password",
                     contentType: .password
                 )
                 
