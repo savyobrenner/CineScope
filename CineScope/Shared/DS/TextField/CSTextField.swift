@@ -1,5 +1,5 @@
 //
-//  LisaTextField.swift
+//  CSTextField.swift
 //  CineScope
 //
 //  Created by Savyo Brenner on 30/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LisaTextField: View {
+struct CSTextField: View {
     @Binding var stateObservable: String
     var inputFieldPlaceholder: String = ""
     var contentType: UITextContentType = .name
@@ -92,10 +92,10 @@ struct LisaTextField: View {
 #Preview {
     ZStack {
         Color.red
-        LisaTextField(
+        CSTextField(
             stateObservable: .constant(""),
             inputFieldPlaceholder: "email",
-            contentType: .password
+            contentType: .emailAddress
         )
     }
 }

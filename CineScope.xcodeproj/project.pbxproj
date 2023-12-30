@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADF12B40BB5B006E6DB1 /* LoginView.swift */; };
+		F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADF52B40D55E006E6DB1 /* Router.swift */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -25,14 +27,14 @@
 		F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF478F2B40AF9800F52351 /* ReachabilityProtocol.swift */; };
 		F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47912B40AF9800F52351 /* EmptyResponse.swift */; };
 		F8DF47C32B40AF9800F52351 /* LSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47922B40AF9800F52351 /* LSError.swift */; };
-		F8DF47C52B40AF9800F52351 /* LisaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47962B40AF9800F52351 /* LisaTextField.swift */; };
+		F8DF47C52B40AF9800F52351 /* CSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47962B40AF9800F52351 /* CSTextField.swift */; };
 		F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47982B40AF9800F52351 /* CornerRadiusStyle.swift */; };
-		F8DF47C72B40AF9800F52351 /* LisaBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479A2B40AF9800F52351 /* LisaBaseButton.swift */; };
-		F8DF47C82B40AF9800F52351 /* LisaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479B2B40AF9800F52351 /* LisaButton.swift */; };
-		F8DF47C92B40AF9800F52351 /* LisaText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479D2B40AF9800F52351 /* LisaText.swift */; };
+		F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479A2B40AF9800F52351 /* CSBaseButton.swift */; };
+		F8DF47C82B40AF9800F52351 /* CSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479B2B40AF9800F52351 /* CSButton.swift */; };
+		F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479D2B40AF9800F52351 /* CSText.swift */; };
 		F8DF47CB2B40AF9800F52351 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A02B40AF9800F52351 /* ServiceLocator.swift */; };
 		F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A32B40AF9800F52351 /* BrandFontName.swift */; };
-		F8DF47CE2B40AF9800F52351 /* LisaButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A42B40AF9800F52351 /* LisaButtonStyle.swift */; };
+		F8DF47CE2B40AF9800F52351 /* CSButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A42B40AF9800F52351 /* CSButtonStyle.swift */; };
 		F8DF47CF2B40AF9800F52351 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A62B40AF9800F52351 /* Codable+Extensions.swift */; };
 		F8DF47D02B40AF9800F52351 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A72B40AF9800F52351 /* View+Extensions.swift */; };
 		F8DF47D12B40AF9800F52351 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47A82B40AF9800F52351 /* Font+Extensions.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F86EADF12B40BB5B006E6DB1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F86EADF52B40D55E006E6DB1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,14 +94,14 @@
 		F8DF47912B40AF9800F52351 /* EmptyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		F8DF47922B40AF9800F52351 /* LSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSError.swift; sourceTree = "<group>"; };
 		F8DF47932B40AF9800F52351 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		F8DF47962B40AF9800F52351 /* LisaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisaTextField.swift; sourceTree = "<group>"; };
+		F8DF47962B40AF9800F52351 /* CSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTextField.swift; sourceTree = "<group>"; };
 		F8DF47982B40AF9800F52351 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
-		F8DF479A2B40AF9800F52351 /* LisaBaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisaBaseButton.swift; sourceTree = "<group>"; };
-		F8DF479B2B40AF9800F52351 /* LisaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisaButton.swift; sourceTree = "<group>"; };
-		F8DF479D2B40AF9800F52351 /* LisaText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisaText.swift; sourceTree = "<group>"; };
+		F8DF479A2B40AF9800F52351 /* CSBaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSBaseButton.swift; sourceTree = "<group>"; };
+		F8DF479B2B40AF9800F52351 /* CSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSButton.swift; sourceTree = "<group>"; };
+		F8DF479D2B40AF9800F52351 /* CSText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSText.swift; sourceTree = "<group>"; };
 		F8DF47A02B40AF9800F52351 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		F8DF47A32B40AF9800F52351 /* BrandFontName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandFontName.swift; sourceTree = "<group>"; };
-		F8DF47A42B40AF9800F52351 /* LisaButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisaButtonStyle.swift; sourceTree = "<group>"; };
+		F8DF47A42B40AF9800F52351 /* CSButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSButtonStyle.swift; sourceTree = "<group>"; };
 		F8DF47A62B40AF9800F52351 /* Codable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Extensions.swift"; sourceTree = "<group>"; };
 		F8DF47A72B40AF9800F52351 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		F8DF47A82B40AF9800F52351 /* Font+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
@@ -140,6 +144,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F86EADEF2B40BB04006E6DB1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F86EADF02B40BB46006E6DB1 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F86EADF02B40BB46006E6DB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F86EADF12B40BB5B006E6DB1 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86EADF32B40BB6D006E6DB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8DF47EE2B40B1E200F52351 /* SplashScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86EADF42B40D552006E6DB1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F86EADF52B40D55E006E6DB1 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		F8DF47462B40AF0D00F52351 = {
 			isa = PBXGroup;
 			children = (
@@ -199,10 +235,11 @@
 		F8DF477C2B40AF7700F52351 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F86EADF42B40D552006E6DB1 /* Router */,
 				F8DF47AA2B40AF9800F52351 /* AppAssets */,
 				F8DF479F2B40AF9800F52351 /* Application */,
 				F8DF47B42B40AF9800F52351 /* BusinessLayer */,
-				F8DF47942B40AF9800F52351 /* Components */,
+				F8DF47942B40AF9800F52351 /* DS */,
 				F8DF47A22B40AF9800F52351 /* Enums */,
 				F8DF47A52B40AF9800F52351 /* Extensions */,
 				F8DF477E2B40AF9800F52351 /* Helpers */,
@@ -215,6 +252,7 @@
 		F8DF477D2B40AF7B00F52351 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F86EADEF2B40BB04006E6DB1 /* Login */,
 				F8DF47ED2B40B1CE00F52351 /* Splash */,
 			);
 			path = Sources;
@@ -303,7 +341,7 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		F8DF47942B40AF9800F52351 /* Components */ = {
+		F8DF47942B40AF9800F52351 /* DS */ = {
 			isa = PBXGroup;
 			children = (
 				F8DF47952B40AF9800F52351 /* TextField */,
@@ -311,13 +349,13 @@
 				F8DF47992B40AF9800F52351 /* Button */,
 				F8DF479C2B40AF9800F52351 /* Text */,
 			);
-			path = Components;
+			path = DS;
 			sourceTree = "<group>";
 		};
 		F8DF47952B40AF9800F52351 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				F8DF47962B40AF9800F52351 /* LisaTextField.swift */,
+				F8DF47962B40AF9800F52351 /* CSTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -333,8 +371,8 @@
 		F8DF47992B40AF9800F52351 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				F8DF479A2B40AF9800F52351 /* LisaBaseButton.swift */,
-				F8DF479B2B40AF9800F52351 /* LisaButton.swift */,
+				F8DF479A2B40AF9800F52351 /* CSBaseButton.swift */,
+				F8DF479B2B40AF9800F52351 /* CSButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -342,7 +380,7 @@
 		F8DF479C2B40AF9800F52351 /* Text */ = {
 			isa = PBXGroup;
 			children = (
-				F8DF479D2B40AF9800F52351 /* LisaText.swift */,
+				F8DF479D2B40AF9800F52351 /* CSText.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -360,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				F8DF47A32B40AF9800F52351 /* BrandFontName.swift */,
-				F8DF47A42B40AF9800F52351 /* LisaButtonStyle.swift */,
+				F8DF47A42B40AF9800F52351 /* CSButtonStyle.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -417,7 +455,7 @@
 		F8DF47ED2B40B1CE00F52351 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				F8DF47EE2B40B1E200F52351 /* SplashScreenView.swift */,
+				F86EADF32B40BB6D006E6DB1 /* View */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -564,11 +602,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DF47C52B40AF9800F52351 /* LisaTextField.swift in Sources */,
+				F8DF47C52B40AF9800F52351 /* CSTextField.swift in Sources */,
 				F8DF47F02B40B59C00F52351 /* Endpoint.swift in Sources */,
 				F8DF47D02B40AF9800F52351 /* View+Extensions.swift in Sources */,
-				F8DF47C82B40AF9800F52351 /* LisaButton.swift in Sources */,
+				F8DF47C82B40AF9800F52351 /* CSButton.swift in Sources */,
 				F8DF47BA2B40AF9800F52351 /* UserDefaultsStorage.swift in Sources */,
+				F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */,
 				F8DF47BF2B40AF9800F52351 /* NetworkProtocol.swift in Sources */,
 				F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */,
 				F8DF47BC2B40AF9800F52351 /* StorageKey.swift in Sources */,
@@ -579,19 +618,20 @@
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F8DF47C02B40AF9800F52351 /* Reachability.swift in Sources */,
 				F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */,
-				F8DF47C72B40AF9800F52351 /* LisaBaseButton.swift in Sources */,
+				F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */,
 				F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */,
 				F8DF47CB2B40AF9800F52351 /* ServiceLocator.swift in Sources */,
+				F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */,
 				F8DF47CF2B40AF9800F52351 /* Codable+Extensions.swift in Sources */,
 				F8DF47BB2B40AF9800F52351 /* CacheManager.swift in Sources */,
 				F8DF47DC2B40AF9800F52351 /* CacheProtocol.swift in Sources */,
-				F8DF47C92B40AF9800F52351 /* LisaText.swift in Sources */,
+				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
 				F8DF47C32B40AF9800F52351 /* LSError.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
 				F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */,
 				F8DF47B82B40AF9800F52351 /* Constants.swift in Sources */,
 				F8DF47D22B40AF9800F52351 /* Color+Extensions.swift in Sources */,
-				F8DF47CE2B40AF9800F52351 /* LisaButtonStyle.swift in Sources */,
+				F8DF47CE2B40AF9800F52351 /* CSButtonStyle.swift in Sources */,
 				F8DF47BE2B40AF9800F52351 /* MoyaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

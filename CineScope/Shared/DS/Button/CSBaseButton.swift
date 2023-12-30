@@ -1,5 +1,5 @@
 //
-//  LisaBaseButton.swift
+//  CSBaseButton.swift
 //  CineScope
 //
 //  Created by Savyo Brenner on 30/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-internal struct LisaBaseButton: View {
+internal struct CSBaseButton: View {
     
     let action: (() -> Void)?
     let title: String

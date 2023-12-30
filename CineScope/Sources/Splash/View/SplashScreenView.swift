@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    @EnvironmentObject var router: Router
+    
     var body: some View {
         ZStack {
             Image("background_gradient")

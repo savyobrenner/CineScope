@@ -1,5 +1,5 @@
 //
-//  LisaText.swift
+//  CSText.swift
 //  CineScope
 //
 //  Created by Savyo Brenner on 30/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LisaText: View {
+struct CSText: View {
     
     let text: String
     let size: CGFloat

@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct CineScopeApp: App {
+    @ObservedObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            NavigationStack(path: $router.navigationPath) {
+                SplashScreenView()
+                    .navigationDestination(for: Router.Destination.self) { destination in
+                        switch destination {
+                        case .login:
+                            LoginView()
+                        case .tabBar:
+                            EmptyView()
+                        }
+                    }
+            }
+            .environmentObject(router)
         }
     }
 }
