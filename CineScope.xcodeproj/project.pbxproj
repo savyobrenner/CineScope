@@ -13,6 +13,8 @@
 		F86EADFB2B40DBCB006E6DB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADFA2B40DBCB006E6DB1 /* AppDelegate.swift */; };
 		F86EADFE2B40DC8A006E6DB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F86EADFD2B40DC8A006E6DB1 /* GoogleService-Info.plist */; };
 		F86EAE022B40DE7C006E6DB1 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE012B40DE7C006E6DB1 /* RegistrationView.swift */; };
+		F86EAE052B40E00D006E6DB1 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */; };
+		F86EAE092B40E0E1006E6DB1 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE082B40E0E1006E6DB1 /* TabItems.swift */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		F86EADFA2B40DBCB006E6DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F86EADFD2B40DC8A006E6DB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F86EAE012B40DE7C006E6DB1 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
+		F86EAE082B40E0E1006E6DB1 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +212,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F86EAE032B40E005006E6DB1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE072B40E0DA006E6DB1 /* Model */,
+				F86EAE062B40E0D7006E6DB1 /* View */,
+				F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F86EAE062B40E0D7006E6DB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86EAE072B40E0DA006E6DB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE082B40E0E1006E6DB1 /* TabItems.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F8DF47462B40AF0D00F52351 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +314,7 @@
 		F8DF477D2B40AF7B00F52351 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F86EAE032B40E005006E6DB1 /* TabBar */,
 				F86EADFF2B40DE6E006E6DB1 /* Registration */,
 				F86EADEF2B40BB04006E6DB1 /* Login */,
 				F8DF47ED2B40B1CE00F52351 /* Splash */,
@@ -658,6 +688,7 @@
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F8DF47C02B40AF9800F52351 /* Reachability.swift in Sources */,
 				F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */,
+				F86EAE092B40E0E1006E6DB1 /* TabItems.swift in Sources */,
 				F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */,
 				F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */,
 				F8DF47CB2B40AF9800F52351 /* ServiceLocator.swift in Sources */,
@@ -672,6 +703,7 @@
 				F8DF47B82B40AF9800F52351 /* Constants.swift in Sources */,
 				F8DF47D22B40AF9800F52351 /* Color+Extensions.swift in Sources */,
 				F8DF47CE2B40AF9800F52351 /* CSButtonStyle.swift in Sources */,
+				F86EAE052B40E00D006E6DB1 /* MainTabBarView.swift in Sources */,
 				F8DF47BE2B40AF9800F52351 /* MoyaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
