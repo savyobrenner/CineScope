@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F86CB93C2B41920D0031606F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86CB93B2B41920D0031606F /* LoginViewModel.swift */; };
+		F86CB93F2B4192290031606F /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86CB93E2B4192290031606F /* LoginViewModelProtocol.swift */; };
 		F86E86942B4172D0005315D8 /* ServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */; };
 		F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86952B417409005315D8 /* CacheManagerProtocol.swift */; };
 		F86E86992B4176B2005315D8 /* CSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86982B4176B2005315D8 /* CSToast.swift */; };
@@ -93,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F86CB93B2B41920D0031606F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F86CB93E2B4192290031606F /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocatorProtocol.swift; sourceTree = "<group>"; };
 		F86E86952B417409005315D8 /* CacheManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerProtocol.swift; sourceTree = "<group>"; };
 		F86E86982B4176B2005315D8 /* CSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSToast.swift; sourceTree = "<group>"; };
@@ -190,6 +194,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F86CB93A2B4192050031606F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F86CB93B2B41920D0031606F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F86CB93D2B41921A0031606F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F86CB93E2B4192290031606F /* LoginViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F86E86922B4172C3005315D8 /* ServiceLocator */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +232,8 @@
 		F86EADEF2B40BB04006E6DB1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F86CB93D2B41921A0031606F /* Protocols */,
+				F86CB93A2B4192050031606F /* ViewModel */,
 				F86EADF02B40BB46006E6DB1 /* View */,
 			);
 			path = Login;
@@ -836,6 +858,7 @@
 				F86E869B2B4176C1005315D8 /* CSToastType.swift in Sources */,
 				F8DF47BC2B40AF9800F52351 /* StorageKey.swift in Sources */,
 				F8DF47BD2B40AF9800F52351 /* StorageError.swift in Sources */,
+				F86CB93F2B4192290031606F /* LoginViewModelProtocol.swift in Sources */,
 				F8DF47EF2B40B1E200F52351 /* SplashScreenView.swift in Sources */,
 				F8DF47D12B40AF9800F52351 /* Font+Extensions.swift in Sources */,
 				F8DF47B92B40AF9800F52351 /* AppEnviroment.swift in Sources */,
@@ -862,6 +885,7 @@
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
 				F86EAE212B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift in Sources */,
 				F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */,
+				F86CB93C2B41920D0031606F /* LoginViewModel.swift in Sources */,
 				F8DF47B82B40AF9800F52351 /* Constants.swift in Sources */,
 				F8DF47D22B40AF9800F52351 /* Color+Extensions.swift in Sources */,
 				F86E86992B4176B2005315D8 /* CSToast.swift in Sources */,

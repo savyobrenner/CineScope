@@ -1,5 +1,5 @@
 //
-//  RegistrationViewModel.swift
+//  LoginViewModel.swift
 //  CineScope
 //
 //  Created by Savyo Brenner on 31/12/23.
@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-class RegistrationViewModel: RegistrationViewModelProtocol {
+class LoginViewModel: LoginViewModelProtocol {
     
     private let router: Router
     private let authenticationService: AuthenticationProtocol
     
-    @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
     
@@ -25,18 +24,17 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
         self.router = router
     }
     
-    func register() {
+    func login() {
         clearErrorMessages()
         
-        guard validateName(), validateEmail(), validatePassword() else {
+        guard validateEmail(), validatePassword() else {
             return
         }
         
         isLoading = true
-        authenticationService.register(
-            name: name,
-            email: email,
-            password: password
+        authenticationService.login(
+            with: email,
+            and: password
         ) { [weak self] result in
             self?.isLoading = false
             switch result {
@@ -47,20 +45,20 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
             }
         }
     }
+    
+    func navigateToRegistration() {
+        router.navigate(to: .registration)
+    }
+    
+    func navigateToHome() {
+        router.navigate(to: .tabBar)
+    }
 }
 
-private extension RegistrationViewModel {
+private extension LoginViewModel {
     
     func clearErrorMessages() {
         toastMessage = nil
-    }
-    
-    func validateName() -> Bool {
-        guard !name.isEmpty else {
-            toastMessage = .init(message: "Name cannot be empty.", type: .info)
-            return false
-        }
-        return true
     }
     
     func validateEmail() -> Bool {

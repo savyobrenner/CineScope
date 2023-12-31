@@ -63,6 +63,12 @@ struct RegistrationView<ViewModel: RegistrationViewModelProtocol>: View {
     }
 }
 
+import Factory
 #Preview {
-    RegistrationView(viewModel: RegistrationViewModel(authenticationService: FirebaseManager()))
+    RegistrationView(
+        viewModel: RegistrationViewModel(
+            authenticationService: Container.shared.authenticationService(),
+            router: Router()
+        )
+    )
 }

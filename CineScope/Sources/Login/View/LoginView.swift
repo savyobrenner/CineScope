@@ -7,86 +7,98 @@
 
 import SwiftUI
 
-struct LoginView: View {
-    @EnvironmentObject var router: Router
+struct LoginView<ViewModel: LoginViewModelProtocol>: View {
     
-    // TODO: - Move this vars to viewModel
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
-            
-            Spacer()
-            
-            Image("logo")
-                .resizable()
-                .frame(width: 250, height: 250)
-            
-            VStack(alignment: .trailing, spacing: 10) {
-                CSTextField(
-                    stateObservable: $email,
-                    inputFieldPlaceholder: "Email"
-                )
+        ZStack {
+            VStack(spacing: 0) {
                 
-                CSTextField(
-                    stateObservable: $password,
-                    inputFieldPlaceholder: "Password",
-                    contentType: .password
-                )
+                Spacer()
                 
-                Button(action: {
-                    // TODO: - Change to Recovery Password flow
-                }, label: {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 250, height: 250)
+                
+                VStack(alignment: .trailing, spacing: 10) {
+                    CSTextField(
+                        stateObservable: $viewModel.email,
+                        inputFieldPlaceholder: "Email"
+                    )
+                    
+                    CSTextField(
+                        stateObservable: $viewModel.password,
+                        inputFieldPlaceholder: "Password",
+                        contentType: .password
+                    )
+                    
+                    Button(action: {
+                        // TODO: - Change to Recovery Password flow
+                    }, label: {
+                        CSText(
+                            text: "Forgot password ?",
+                            size: 13,
+                            type: .medium,
+                            color: .Brand.white
+                        )
+                        .underline()
+                    })
+                    
+                    CSButton(
+                        title: "Login",
+                        style: .primary) {
+                            viewModel.login()
+                        }
+                        .padding(.top, 20)
+                }
+                
+                Spacer()
+                
+                HStack(alignment: .center, spacing: 5) {
                     CSText(
-                        text: "Forgot password ?",
+                        text: "Don’t have an account ?",
                         size: 13,
                         type: .medium,
                         color: .Brand.white
                     )
-                    .underline()
-                })
-                
-                CSButton(
-                    title: "Login",
-                    style: .primary) {
-                        //TODO: -  Delegate this logic to viewModel
-                        router.navigate(to: .tabBar)
-                    }
-                    .padding(.top, 20)
+                    
+                    Button(action: {
+                        viewModel.navigateToRegistration()
+                    }, label: {
+                        CSText(
+                            text: "Create a new one",
+                            size: 13,
+                            type: .medium,
+                            color: .Brand.secondary
+                        )
+                        .underline()
+                    })
+                }
+                .padding(.bottom, 30)
             }
+            .background(
+                Image("background_gradient")
+            )
+            .padding(.horizontal, 25)
             
-            Spacer()
-            
-            HStack(alignment: .center, spacing: 5) {
-                CSText(
-                    text: "Don’t have an account ?",
-                    size: 13,
-                    type: .medium,
-                    color: .Brand.white
-                )
-                
-                Button(action: {
-                    router.navigate(to: .registration)
-                }, label: {
-                    CSText(
-                        text: "Create a new one",
-                        size: 13,
-                        type: .medium,
-                        color: .Brand.secondary
-                    )
-                    .underline()
-                })
+            if viewModel.isLoading {
+                CSLoadingView()
             }
-            .padding(.bottom, 30)
         }
-        .background(
-            Image("background_gradient")
+        .toast(
+            message: $viewModel.toastMessage,
+            type: viewModel.toastMessage?.type ?? .info
         )
-        .padding(.horizontal, 25)
     }
 }
 
+import Factory
 #Preview {
-    LoginView()
+    LoginView(
+        viewModel: LoginViewModel(
+            authenticationService: Container.shared.authenticationService(),
+            router: Router()
+        )
+    )
 }

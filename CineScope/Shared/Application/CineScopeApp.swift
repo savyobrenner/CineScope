@@ -22,12 +22,18 @@ struct CineScopeApp: App {
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .login:
-                            LoginView()
-                                .navigationBarBackButtonHidden(true)
+                            LoginView(
+                                viewModel: LoginViewModel(
+                                    authenticationService: Container.shared.authenticationService(), 
+                                    router: router
+                                )
+                            )
+                            .navigationBarBackButtonHidden(true)
                         case .registration:
                             RegistrationView(
                                 viewModel: RegistrationViewModel(
-                                    authenticationService: Container.shared.authenticationService()
+                                    authenticationService: Container.shared.authenticationService(), 
+                                    router: router
                                 )
                             )
                         case .tabBar:
