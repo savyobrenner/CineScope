@@ -21,6 +21,11 @@
 		F86EAE172B40EAB9006E6DB1 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE162B40EAB9006E6DB1 /* AuthenticationProtocol.swift */; };
 		F86EAE192B40EBD1006E6DB1 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE182B40EBD1006E6DB1 /* FirebaseManager.swift */; };
 		F86EAE1B2B40ED25006E6DB1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F86EAE1A2B40ED25006E6DB1 /* FirebaseAuth */; };
+		F86EAE1E2B40F0B6006E6DB1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE1D2B40F0B6006E6DB1 /* RegistrationViewModel.swift */; };
+		F86EAE212B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE202B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift */; };
+		F86EAE242B40F2DA006E6DB1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE232B40F2DA006E6DB1 /* LoadingView.swift */; };
+		F86EAE272B40F47B006E6DB1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = F86EAE262B40F47B006E6DB1 /* Factory */; };
+		F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE292B40F490006E6DB1 /* Factory+Container.swift */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -94,6 +99,10 @@
 		F86EAE142B40E4A2006E6DB1 /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
 		F86EAE162B40EAB9006E6DB1 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
 		F86EAE182B40EBD1006E6DB1 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		F86EAE1D2B40F0B6006E6DB1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		F86EAE202B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelProtocol.swift; sourceTree = "<group>"; };
+		F86EAE232B40F2DA006E6DB1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F86EAE292B40F490006E6DB1 /* Factory+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Container.swift"; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +157,7 @@
 				F86EADF92B40DBB9006E6DB1 /* FirebaseAnalytics in Frameworks */,
 				F86EAE1B2B40ED25006E6DB1 /* FirebaseAuth in Frameworks */,
 				F8DF47DF2B40B09200F52351 /* Moya in Frameworks */,
+				F86EAE272B40F47B006E6DB1 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +222,8 @@
 		F86EADFF2B40DE6E006E6DB1 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				F86EAE1F2B40F0B8006E6DB1 /* Protocols */,
+				F86EAE1C2B40F0A9006E6DB1 /* ViewModel */,
 				F86EAE002B40DE75006E6DB1 /* View */,
 			);
 			path = Registration;
@@ -298,6 +310,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F86EAE1C2B40F0A9006E6DB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE1D2B40F0B6006E6DB1 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F86EAE1F2B40F0B8006E6DB1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE202B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F86EAE222B40F2D3006E6DB1 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE232B40F2DA006E6DB1 /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		F86EAE282B40F484006E6DB1 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE292B40F490006E6DB1 /* Factory+Container.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		F8DF47462B40AF0D00F52351 = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +401,7 @@
 		F8DF477C2B40AF7700F52351 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F86EADF42B40D552006E6DB1 /* Router */,
+				F86EAE282B40F484006E6DB1 /* Factory */,
 				F8DF47AA2B40AF9800F52351 /* AppAssets */,
 				F8DF479F2B40AF9800F52351 /* Application */,
 				F8DF47B42B40AF9800F52351 /* BusinessLayer */,
@@ -367,6 +411,7 @@
 				F8DF477E2B40AF9800F52351 /* Helpers */,
 				F8DF47812B40AF9800F52351 /* Layers */,
 				F8DF47B62B40AF9800F52351 /* Protocols */,
+				F86EADF42B40D552006E6DB1 /* Router */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -375,12 +420,12 @@
 			isa = PBXGroup;
 			children = (
 				F86EAE0C2B40E47F006E6DB1 /* Downloads */,
-				F86EAE0B2B40E47B006E6DB1 /* Search */,
 				F86EAE0A2B40E475006E6DB1 /* Home */,
-				F86EAE032B40E005006E6DB1 /* TabBar */,
-				F86EADFF2B40DE6E006E6DB1 /* Registration */,
 				F86EADEF2B40BB04006E6DB1 /* Login */,
+				F86EADFF2B40DE6E006E6DB1 /* Registration */,
+				F86EAE0B2B40E47B006E6DB1 /* Search */,
 				F8DF47ED2B40B1CE00F52351 /* Splash */,
+				F86EAE032B40E005006E6DB1 /* TabBar */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -473,6 +518,7 @@
 		F8DF47942B40AF9800F52351 /* DS */ = {
 			isa = PBXGroup;
 			children = (
+				F86EAE222B40F2D3006E6DB1 /* Loading */,
 				F8DF47952B40AF9800F52351 /* TextField */,
 				F8DF47972B40AF9800F52351 /* Styles */,
 				F8DF47992B40AF9800F52351 /* Button */,
@@ -610,6 +656,7 @@
 				F8DF47DE2B40B09200F52351 /* Moya */,
 				F86EADF82B40DBB9006E6DB1 /* FirebaseAnalytics */,
 				F86EAE1A2B40ED25006E6DB1 /* FirebaseAuth */,
+				F86EAE262B40F47B006E6DB1 /* Factory */,
 			);
 			productName = CineScope;
 			productReference = F8DF474F2B40AF0D00F52351 /* CineScope.app */;
@@ -686,6 +733,7 @@
 			packageReferences = (
 				F8DF47DD2B40B09200F52351 /* XCRemoteSwiftPackageReference "Moya" */,
 				F86EADF72B40DBB9006E6DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F86EAE252B40F47B006E6DB1 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = F8DF47502B40AF0D00F52351 /* Products */;
 			projectDirPath = "";
@@ -755,6 +803,9 @@
 				F8DF47EF2B40B1E200F52351 /* SplashScreenView.swift in Sources */,
 				F8DF47D12B40AF9800F52351 /* Font+Extensions.swift in Sources */,
 				F8DF47B92B40AF9800F52351 /* AppEnviroment.swift in Sources */,
+				F86EAE242B40F2DA006E6DB1 /* LoadingView.swift in Sources */,
+				F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */,
+				F86EAE1E2B40F0B6006E6DB1 /* RegistrationViewModel.swift in Sources */,
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F8DF47C02B40AF9800F52351 /* Reachability.swift in Sources */,
 				F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */,
@@ -770,6 +821,7 @@
 				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
 				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
+				F86EAE212B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift in Sources */,
 				F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */,
 				F8DF47B82B40AF9800F52351 /* Constants.swift in Sources */,
 				F8DF47D22B40AF9800F52351 /* Color+Extensions.swift in Sources */,
@@ -1117,6 +1169,14 @@
 				minimumVersion = 10.19.1;
 			};
 		};
+		F86EAE252B40F47B006E6DB1 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		F8DF47DD2B40B09200F52351 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1136,6 +1196,11 @@
 		F86EAE1A2B40ED25006E6DB1 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FirebaseAuth;
+		};
+		F86EAE262B40F47B006E6DB1 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F86EAE252B40F47B006E6DB1 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 		F8DF47DE2B40B09200F52351 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;

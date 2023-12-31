@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import Factory
 
 @main
 struct CineScopeApp: App {
@@ -24,7 +25,11 @@ struct CineScopeApp: App {
                             LoginView()
                                 .navigationBarBackButtonHidden(true)
                         case .registration:
-                            RegistrationView()
+                            RegistrationView(
+                                viewModel: RegistrationViewModel(
+                                    authenticationService: Container.shared.authenticationService()
+                                )
+                            )
                         case .tabBar:
                             MainTabBarView()
                                 .navigationBarBackButtonHidden(true)

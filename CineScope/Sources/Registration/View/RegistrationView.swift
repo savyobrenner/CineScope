@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-struct RegistrationView: View {
+struct RegistrationView<ViewModel: RegistrationViewModelProtocol>: View {
     
-    // TODO: - Move this vars to viewModel
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -25,17 +22,17 @@ struct RegistrationView: View {
             
             VStack(alignment: .trailing, spacing: 10) {
                 CSTextField(
-                    stateObservable: $name,
+                    stateObservable: $viewModel.name,
                     inputFieldPlaceholder: "Name"
                 )
                 
                 CSTextField(
-                    stateObservable: $password,
+                    stateObservable: $viewModel.password,
                     inputFieldPlaceholder: "Email"
                 )
                 
                 CSTextField(
-                    stateObservable: $password,
+                    stateObservable: $viewModel.password,
                     inputFieldPlaceholder: "Password",
                     contentType: .password
                 )
@@ -57,6 +54,5 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    RegistrationView(viewModel: RegistrationViewModel(authenticationService: FirebaseManager()))
 }
-
