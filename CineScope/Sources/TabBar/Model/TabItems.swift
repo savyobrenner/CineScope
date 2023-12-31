@@ -6,12 +6,13 @@
 //
 
 import Foundation
+
 enum TabItems: Int, CaseIterable {
     case home = 0
     case search
     case downloads
     
-    var title: String{
+    var title: String {
         switch self {
         case .home:
             return "Home"
@@ -22,7 +23,7 @@ enum TabItems: Int, CaseIterable {
         }
     }
     
-    var iconName: String{
+    var iconName: String {
         switch self {
         case .home:
             return "home_icon"

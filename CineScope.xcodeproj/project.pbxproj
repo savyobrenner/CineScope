@@ -15,6 +15,9 @@
 		F86EAE022B40DE7C006E6DB1 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE012B40DE7C006E6DB1 /* RegistrationView.swift */; };
 		F86EAE052B40E00D006E6DB1 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */; };
 		F86EAE092B40E0E1006E6DB1 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE082B40E0E1006E6DB1 /* TabItems.swift */; };
+		F86EAE0F2B40E48B006E6DB1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE0E2B40E48B006E6DB1 /* HomeView.swift */; };
+		F86EAE122B40E495006E6DB1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE112B40E495006E6DB1 /* SearchView.swift */; };
+		F86EAE152B40E4A2006E6DB1 /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE142B40E4A2006E6DB1 /* DownloadsView.swift */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -83,6 +86,9 @@
 		F86EAE012B40DE7C006E6DB1 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		F86EAE082B40E0E1006E6DB1 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
+		F86EAE0E2B40E48B006E6DB1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F86EAE112B40E495006E6DB1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F86EAE142B40E4A2006E6DB1 /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,7 +223,6 @@
 			children = (
 				F86EAE072B40E0DA006E6DB1 /* Model */,
 				F86EAE062B40E0D7006E6DB1 /* View */,
-				F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 		F86EAE062B40E0D7006E6DB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F86EAE042B40E00D006E6DB1 /* MainTabBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +241,54 @@
 				F86EAE082B40E0E1006E6DB1 /* TabItems.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F86EAE0A2B40E475006E6DB1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE0D2B40E485006E6DB1 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F86EAE0B2B40E47B006E6DB1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE102B40E48E006E6DB1 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F86EAE0C2B40E47F006E6DB1 /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE132B40E49A006E6DB1 /* View */,
+			);
+			path = Downloads;
+			sourceTree = "<group>";
+		};
+		F86EAE0D2B40E485006E6DB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE0E2B40E48B006E6DB1 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86EAE102B40E48E006E6DB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE112B40E495006E6DB1 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86EAE132B40E49A006E6DB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F86EAE142B40E4A2006E6DB1 /* DownloadsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F8DF47462B40AF0D00F52351 = {
@@ -314,6 +368,9 @@
 		F8DF477D2B40AF7B00F52351 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F86EAE0C2B40E47F006E6DB1 /* Downloads */,
+				F86EAE0B2B40E47B006E6DB1 /* Search */,
+				F86EAE0A2B40E475006E6DB1 /* Home */,
 				F86EAE032B40E005006E6DB1 /* TabBar */,
 				F86EADFF2B40DE6E006E6DB1 /* Registration */,
 				F86EADEF2B40BB04006E6DB1 /* Login */,
@@ -679,6 +736,8 @@
 				F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */,
 				F8DF47BF2B40AF9800F52351 /* NetworkProtocol.swift in Sources */,
 				F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */,
+				F86EAE0F2B40E48B006E6DB1 /* HomeView.swift in Sources */,
+				F86EAE152B40E4A2006E6DB1 /* DownloadsView.swift in Sources */,
 				F86EADFB2B40DBCB006E6DB1 /* AppDelegate.swift in Sources */,
 				F8DF47BC2B40AF9800F52351 /* StorageKey.swift in Sources */,
 				F8DF47BD2B40AF9800F52351 /* StorageError.swift in Sources */,
@@ -692,6 +751,7 @@
 				F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */,
 				F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */,
 				F8DF47CB2B40AF9800F52351 /* ServiceLocator.swift in Sources */,
+				F86EAE122B40E495006E6DB1 /* SearchView.swift in Sources */,
 				F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */,
 				F8DF47CF2B40AF9800F52351 /* Codable+Extensions.swift in Sources */,
 				F8DF47BB2B40AF9800F52351 /* CacheManager.swift in Sources */,

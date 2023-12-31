@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var router: Router
     
     // TODO: - Move this vars to viewModel
     @State private var email: String = ""
@@ -49,7 +50,8 @@ struct LoginView: View {
                 CSButton(
                     title: "Login",
                     style: .primary) {
-                        
+                        //TODO: -  Delegate this logic to viewModel
+                        router.navigate(to: .tabBar)
                     }
                     .padding(.top, 20)
             }
@@ -63,6 +65,7 @@ struct LoginView: View {
                     type: .medium,
                     color: .Brand.white
                 )
+                
                 Button(action: {
                     // TODO: - Change to Register flow
                 }, label: {

@@ -26,7 +26,8 @@ struct CineScopeApp: App {
                         case .registration:
                             RegistrationView()
                         case .tabBar:
-                            EmptyView()
+                            MainTabBarView()
+                                .navigationBarBackButtonHidden(true)
                         }
                     }
             }
