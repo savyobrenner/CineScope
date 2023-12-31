@@ -7,16 +7,14 @@
 
 import Foundation
 
-final class ServiceLocator {
-    
-    static var shared: ServiceLocator!
+final class ServiceLocator: ServiceLocatorProtocol {
     
     var network: NetworkProtocol
-    var cacheManager: CacheManager
+    var cacheManager: CacheManagerProtocol
     var userSettings: UserSettingsProtocol
     
     init(network: NetworkProtocol,
-         cacheManager: CacheManager,
+         cacheManager: CacheManagerProtocol,
          userSettings: UserSettingsProtocol) {
         self.network = network
         self.cacheManager = cacheManager

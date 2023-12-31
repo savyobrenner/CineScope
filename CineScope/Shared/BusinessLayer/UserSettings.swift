@@ -5,15 +5,16 @@
 //  Created by Savyo Brenner on 30/12/23.
 //
 
-import Foundation
+import Factory
 
 protocol UserSettingsProtocol {
     var token: String { get }
 }
 
 class UserSettings: UserSettingsProtocol {
+    
     private(set) lazy var token: String = {
-        (try? ServiceLocator.shared.cacheManager.fetch(String.self, for: .token)) ?? ""
+        (try? Container.shared.serviceLocator().cacheManager.fetch(String.self, for: .token)) ?? ""
     }()
 }
 

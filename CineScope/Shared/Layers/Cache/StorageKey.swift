@@ -17,4 +17,3 @@ public enum StorageKey: CaseIterable {
         }
     }
 }
-

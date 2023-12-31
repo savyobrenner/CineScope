@@ -5,6 +5,7 @@
 //  Created by Savyo Brenner on 30/12/23.
 //
 
+import Factory
 import Foundation
 import Moya
 
@@ -15,7 +16,7 @@ public protocol Endpoint: TargetType {
 extension Endpoint {
     
     private var userToken: String? {
-        return ServiceLocator.shared.userSettings.token
+        return Container.shared.serviceLocator().userSettings.token
     }
     
     var headers: [String: String]? {

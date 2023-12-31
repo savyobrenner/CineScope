@@ -1,5 +1,5 @@
 //
-//  LoadingView.swift
+//  CSLoadingView.swift
 //  CineScope
 //
 //  Created by Savyo Brenner on 31/12/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoadingView: View {
+struct CSLoadingView: View {
     var body: some View {
         ZStack {
             Color.black.opacity(0.4).edgesIgnoringSafeArea(.all)

@@ -12,7 +12,25 @@ extension Container {
         self { MoyaManager() }
     }
     
+    var cacheManager: Factory<CacheManagerProtocol> {
+        self { CacheManager() }
+    }
+    
+    var userSettings: Factory<UserSettingsProtocol> {
+        self { UserSettings() }
+    }
+    
     var authenticationService: Factory<AuthenticationProtocol> {
         self { FirebaseManager() }
+    }
+    
+    var serviceLocator: Factory<ServiceLocatorProtocol> {
+        self {
+            ServiceLocator(
+                network: self.networkService.resolve(),
+                cacheManager: self.cacheManager.resolve(),
+                userSettings: self.userSettings.resolve()
+            )
+        }.singleton
     }
 }

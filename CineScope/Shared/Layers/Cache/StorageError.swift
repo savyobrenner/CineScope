@@ -12,5 +12,3 @@ public enum StorageError: Error {
     case cantWrite(Error)
     case cantDelete(StorageKey)
 }
-
-
