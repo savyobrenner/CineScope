@@ -24,12 +24,12 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                 VStack(alignment: .trailing, spacing: 10) {
                     CSTextField(
                         stateObservable: $viewModel.email,
-                        inputFieldPlaceholder: "Email"
+                        inputFieldPlaceholder: "Email".localized
                     )
                     
                     CSTextField(
                         stateObservable: $viewModel.password,
-                        inputFieldPlaceholder: "Password",
+                        inputFieldPlaceholder: "Password".localized,
                         contentType: .password
                     )
                     
@@ -37,7 +37,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                         // TODO: - Change to Recovery Password flow
                     }, label: {
                         CSText(
-                            text: "Forgot password ?",
+                            text: "Forgot password ?".localized,
                             size: 13,
                             type: .medium,
                             color: .Brand.white
@@ -46,7 +46,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                     })
                     
                     CSButton(
-                        title: "Login",
+                        title: "Login".localized,
                         style: .primary) {
                             viewModel.login()
                         }
@@ -57,7 +57,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                 
                 HStack(alignment: .center, spacing: 5) {
                     CSText(
-                        text: "Don’t have an account ?",
+                        text: "Don’t have an account ?".localized,
                         size: 13,
                         type: .medium,
                         color: .Brand.white
@@ -67,7 +67,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                         viewModel.navigateToRegistration()
                     }, label: {
                         CSText(
-                            text: "Create a new one",
+                            text: "Create a new one".localized,
                             size: 13,
                             type: .medium,
                             color: .Brand.secondary

@@ -24,22 +24,22 @@ struct RegistrationView<ViewModel: RegistrationViewModelProtocol>: View {
                 VStack(alignment: .trailing, spacing: 10) {
                     CSTextField(
                         stateObservable: $viewModel.name,
-                        inputFieldPlaceholder: "Name"
+                        inputFieldPlaceholder: "Name".localized
                     )
                     
                     CSTextField(
                         stateObservable: $viewModel.email,
-                        inputFieldPlaceholder: "Email"
+                        inputFieldPlaceholder: "Email".localized
                     )
                     
                     CSTextField(
                         stateObservable: $viewModel.password,
-                        inputFieldPlaceholder: "Password",
+                        inputFieldPlaceholder: "Password".localized,
                         contentType: .password
                     )
                     
                     CSButton(
-                        title: "Register",
+                        title: "Register".localized,
                         style: .primary) {
                             viewModel.register()
                         }

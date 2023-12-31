@@ -65,12 +65,12 @@ private extension RegistrationViewModel {
     
     func validateEmail() -> Bool {
         guard !email.isEmpty else {
-            toastMessage = .init(message: "Email cannot be empty.", type: .info)
+            toastMessage = .init(message: "Email cannot be empty.".localized, type: .info)
             return false
         }
         
         guard email.isValidEmail() else {
-            toastMessage = .init(message: "Invalid email format.", type: .info)
+            toastMessage = .init(message: "Invalid email format.".localized, type: .info)
             return false
         }
         
@@ -79,12 +79,12 @@ private extension RegistrationViewModel {
     
     func validatePassword() -> Bool {
         guard !password.isEmpty else {
-            toastMessage = .init(message: "Password cannot be empty.", type: .info)
+            toastMessage = .init(message: "Password cannot be empty.".localized, type: .info)
             return false
         }
         
         guard password.isValidPassword() else {
-            toastMessage = .init(message: "Password must be more than 5 characters.", type: .info)
+            toastMessage = .init(message: "Password must be more than 5 characters.".localized, type: .info)
             return false
         }
         

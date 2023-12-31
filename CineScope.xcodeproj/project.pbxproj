@@ -34,6 +34,7 @@
 		F86EAE242B40F2DA006E6DB1 /* CSLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE232B40F2DA006E6DB1 /* CSLoadingView.swift */; };
 		F86EAE272B40F47B006E6DB1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = F86EAE262B40F47B006E6DB1 /* Factory */; };
 		F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE292B40F490006E6DB1 /* Factory+Container.swift */; };
+		F87B159A2B41978400B0B1C0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F87B15992B41978400B0B1C0 /* Localizable.xcstrings */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		F86EAE202B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelProtocol.swift; sourceTree = "<group>"; };
 		F86EAE232B40F2DA006E6DB1 /* CSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLoadingView.swift; sourceTree = "<group>"; };
 		F86EAE292B40F490006E6DB1 /* Factory+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Container.swift"; sourceTree = "<group>"; };
+		F87B15992B41978400B0B1C0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -395,6 +397,14 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		F87B15982B41976200B0B1C0 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F87B15992B41978400B0B1C0 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		F8DF47462B40AF0D00F52351 = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +473,7 @@
 				F86EAE282B40F484006E6DB1 /* Factory */,
 				F8DF477E2B40AF9800F52351 /* Helpers */,
 				F8DF47812B40AF9800F52351 /* Layers */,
+				F87B15982B41976200B0B1C0 /* Localization */,
 				F8DF47B62B40AF9800F52351 /* Protocols */,
 				F86EADF42B40D552006E6DB1 /* Router */,
 			);
@@ -784,6 +795,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				fr,
 			);
 			mainGroup = F8DF47462B40AF0D00F52351;
 			packageReferences = (
@@ -813,6 +826,7 @@
 				F8DF47EA2B40B16300F52351 /* Montserrat-Regular.ttf in Resources */,
 				F8DF47E62B40B16300F52351 /* Montserrat-SemiBold.ttf in Resources */,
 				F8DF47EB2B40B16300F52351 /* Montserrat-Light.ttf in Resources */,
+				F87B159A2B41978400B0B1C0 /* Localizable.xcstrings in Resources */,
 				F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */,
 				F8DF47E92B40B16300F52351 /* Montserrat-Medium.ttf in Resources */,
 				F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */,

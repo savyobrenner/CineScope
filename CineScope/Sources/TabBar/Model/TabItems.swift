@@ -15,11 +15,11 @@ enum TabItems: Int, CaseIterable {
     var title: String {
         switch self {
         case .home:
-            return "Home"
+            return "Home".localized
         case .search:
-            return "Search"
+            return "Search".localized
         case .downloads:
-            return "Download"
+            return "Downloads".localized
         }
     }
     
