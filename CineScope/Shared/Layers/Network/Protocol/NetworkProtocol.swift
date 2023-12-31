@@ -10,7 +10,6 @@ import Foundation
 public protocol NetworkProtocol {
     func request<T: Codable, U: Endpoint>(
         _ endpoint: U, expectedType: T.Type,
-        _ onResponse: @escaping (Result<T, LSError>) -> Void
+        _ onResponse: @escaping (Result<T, CSError>) -> Void
     )
 }
-

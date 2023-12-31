@@ -18,6 +18,9 @@
 		F86EAE0F2B40E48B006E6DB1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE0E2B40E48B006E6DB1 /* HomeView.swift */; };
 		F86EAE122B40E495006E6DB1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE112B40E495006E6DB1 /* SearchView.swift */; };
 		F86EAE152B40E4A2006E6DB1 /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE142B40E4A2006E6DB1 /* DownloadsView.swift */; };
+		F86EAE172B40EAB9006E6DB1 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE162B40EAB9006E6DB1 /* AuthenticationProtocol.swift */; };
+		F86EAE192B40EBD1006E6DB1 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE182B40EBD1006E6DB1 /* FirebaseManager.swift */; };
+		F86EAE1B2B40ED25006E6DB1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F86EAE1A2B40ED25006E6DB1 /* FirebaseAuth */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -35,7 +38,7 @@
 		F8DF47C02B40AF9800F52351 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF478E2B40AF9800F52351 /* Reachability.swift */; };
 		F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF478F2B40AF9800F52351 /* ReachabilityProtocol.swift */; };
 		F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47912B40AF9800F52351 /* EmptyResponse.swift */; };
-		F8DF47C32B40AF9800F52351 /* LSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47922B40AF9800F52351 /* LSError.swift */; };
+		F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47922B40AF9800F52351 /* CSError.swift */; };
 		F8DF47C52B40AF9800F52351 /* CSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47962B40AF9800F52351 /* CSTextField.swift */; };
 		F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47982B40AF9800F52351 /* CornerRadiusStyle.swift */; };
 		F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF479A2B40AF9800F52351 /* CSBaseButton.swift */; };
@@ -89,6 +92,8 @@
 		F86EAE0E2B40E48B006E6DB1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F86EAE112B40E495006E6DB1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F86EAE142B40E4A2006E6DB1 /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
+		F86EAE162B40EAB9006E6DB1 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
+		F86EAE182B40EBD1006E6DB1 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +114,7 @@
 		F8DF478E2B40AF9800F52351 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F8DF478F2B40AF9800F52351 /* ReachabilityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityProtocol.swift; sourceTree = "<group>"; };
 		F8DF47912B40AF9800F52351 /* EmptyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
-		F8DF47922B40AF9800F52351 /* LSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSError.swift; sourceTree = "<group>"; };
+		F8DF47922B40AF9800F52351 /* CSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSError.swift; sourceTree = "<group>"; };
 		F8DF47932B40AF9800F52351 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F8DF47962B40AF9800F52351 /* CSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTextField.swift; sourceTree = "<group>"; };
 		F8DF47982B40AF9800F52351 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F86EADF92B40DBB9006E6DB1 /* FirebaseAnalytics in Frameworks */,
+				F86EAE1B2B40ED25006E6DB1 /* FirebaseAuth in Frameworks */,
 				F8DF47DF2B40B09200F52351 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				F86EADFD2B40DC8A006E6DB1 /* GoogleService-Info.plist */,
+				F86EAE182B40EBD1006E6DB1 /* FirebaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -350,7 +357,6 @@
 		F8DF477C2B40AF7700F52351 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F86EADFC2B40DC82006E6DB1 /* Firebase */,
 				F86EADF42B40D552006E6DB1 /* Router */,
 				F8DF47AA2B40AF9800F52351 /* AppAssets */,
 				F8DF479F2B40AF9800F52351 /* Application */,
@@ -419,6 +425,7 @@
 		F8DF47882B40AF9800F52351 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F86EADFC2B40DC82006E6DB1 /* Firebase */,
 				F8DF47892B40AF9800F52351 /* Moya */,
 				F8DF478B2B40AF9800F52351 /* Protocol */,
 				F8DF478D2B40AF9800F52351 /* Reachability */,
@@ -439,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				F8DF478C2B40AF9800F52351 /* NetworkProtocol.swift */,
+				F86EAE162B40EAB9006E6DB1 /* AuthenticationProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -456,7 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				F8DF47912B40AF9800F52351 /* EmptyResponse.swift */,
-				F8DF47922B40AF9800F52351 /* LSError.swift */,
+				F8DF47922B40AF9800F52351 /* CSError.swift */,
 				F8DF47932B40AF9800F52351 /* Endpoint.swift */,
 			);
 			path = Base;
@@ -601,6 +609,7 @@
 			packageProductDependencies = (
 				F8DF47DE2B40B09200F52351 /* Moya */,
 				F86EADF82B40DBB9006E6DB1 /* FirebaseAnalytics */,
+				F86EAE1A2B40ED25006E6DB1 /* FirebaseAuth */,
 			);
 			productName = CineScope;
 			productReference = F8DF474F2B40AF0D00F52351 /* CineScope.app */;
@@ -731,6 +740,7 @@
 				F8DF47C52B40AF9800F52351 /* CSTextField.swift in Sources */,
 				F8DF47F02B40B59C00F52351 /* Endpoint.swift in Sources */,
 				F8DF47D02B40AF9800F52351 /* View+Extensions.swift in Sources */,
+				F86EAE172B40EAB9006E6DB1 /* AuthenticationProtocol.swift in Sources */,
 				F8DF47C82B40AF9800F52351 /* CSButton.swift in Sources */,
 				F8DF47BA2B40AF9800F52351 /* UserDefaultsStorage.swift in Sources */,
 				F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */,
@@ -738,6 +748,7 @@
 				F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */,
 				F86EAE0F2B40E48B006E6DB1 /* HomeView.swift in Sources */,
 				F86EAE152B40E4A2006E6DB1 /* DownloadsView.swift in Sources */,
+				F86EAE192B40EBD1006E6DB1 /* FirebaseManager.swift in Sources */,
 				F86EADFB2B40DBCB006E6DB1 /* AppDelegate.swift in Sources */,
 				F8DF47BC2B40AF9800F52351 /* StorageKey.swift in Sources */,
 				F8DF47BD2B40AF9800F52351 /* StorageError.swift in Sources */,
@@ -757,7 +768,7 @@
 				F8DF47BB2B40AF9800F52351 /* CacheManager.swift in Sources */,
 				F8DF47DC2B40AF9800F52351 /* CacheProtocol.swift in Sources */,
 				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
-				F8DF47C32B40AF9800F52351 /* LSError.swift in Sources */,
+				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
 				F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */,
 				F8DF47B82B40AF9800F52351 /* Constants.swift in Sources */,
@@ -1121,6 +1132,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F86EADF72B40DBB9006E6DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		F86EAE1A2B40ED25006E6DB1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAuth;
 		};
 		F8DF47DE2B40B09200F52351 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;

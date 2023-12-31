@@ -41,7 +41,7 @@ final public class MoyaManager: NetworkProtocol {
     
     public func request<T: Codable, U: Endpoint>(
         _ endpoint: U, expectedType: T.Type,
-        _ onResponse: @escaping (Result<T, LSError>) -> Void
+        _ onResponse: @escaping (Result<T, CSError>) -> Void
     ) {
         
         Reachability().addReachabilityObserver()
@@ -56,18 +56,17 @@ final public class MoyaManager: NetworkProtocol {
     
     private func provideRequest<T: Codable, U: Endpoint>(
         provider: NetworkProvider<U>, _ endpoint: U,
-        expectedType: T.Type, _ onResponse: @escaping (Result<T, LSError>
+        expectedType: T.Type, _ onResponse: @escaping (Result<T, CSError>
         ) -> Void) {
         
         provider.provider.request(endpoint) { result in
-            var errorModel = LSError()
+            var errorModel = CSError()
             switch result {
             case .success(let response):
                 
                 if (response.statusCode == 204 && expectedType.self == EmptyResponse.self) || (response.statusCode == 201 && expectedType.self == EmptyResponse.self) {
                     guard let emptyResponse = EmptyResponse() as? T else {
                         errorModel.statusCode = LSConstants.statusCodeForParseError
-                        errorModel.message?.reason = "Error decoding model"
                         errorModel.message?.detail = "API - \(endpoint.path)"
                         onResponse(.failure(errorModel))
                         return
@@ -85,7 +84,6 @@ final public class MoyaManager: NetworkProtocol {
                         
                     } catch {
                         errorModel.statusCode = LSConstants.statusCodeForParseError
-                        errorModel.message?.reason = "Error decoding model"
                         errorModel.message?.detail = "API - \(endpoint.path)"
                         onResponse(.failure(errorModel))
                     }
@@ -97,14 +95,14 @@ final public class MoyaManager: NetworkProtocol {
                         
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        let model = try response.map(LSErrorMessage.self, using: decoder)
+                        let model = try response.map(CSErrorMessage.self, using: decoder)
                         
                         errorModel.message = model
                         onResponse(.failure(errorModel))
                         
                     } catch {
                         errorModel.statusCode = LSConstants.statusCodeForParseError
-                        errorModel.message = .init(code: LSConstants.statusCodeForParseError, reason: "API - \(endpoint.path)")
+                        errorModel.message = .init(detail: "API - \(endpoint.path)")
                         onResponse(.failure(errorModel))
                     }
                     
