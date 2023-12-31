@@ -11,5 +11,7 @@ protocol RegistrationViewModelProtocol: ObservableObject {
     var name: String { get set }
     var email: String { get set }
     var password: String { get set }
+    var isLoading: Bool { get set }
+    var toastMessage: CSToastMessage? { get set }
     func register()
 }

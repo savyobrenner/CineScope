@@ -11,6 +11,8 @@
 		F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86952B417409005315D8 /* CacheManagerProtocol.swift */; };
 		F86E86992B4176B2005315D8 /* CSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86982B4176B2005315D8 /* CSToast.swift */; };
 		F86E869B2B4176C1005315D8 /* CSToastType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E869A2B4176C1005315D8 /* CSToastType.swift */; };
+		F86E869D2B417A02005315D8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E869C2B417A02005315D8 /* String+Extensions.swift */; };
+		F86E869F2B4181FF005315D8 /* CSToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E869E2B4181FF005315D8 /* CSToastMessage.swift */; };
 		F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADF12B40BB5B006E6DB1 /* LoginView.swift */; };
 		F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADF52B40D55E006E6DB1 /* Router.swift */; };
 		F86EADF92B40DBB9006E6DB1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F86EADF82B40DBB9006E6DB1 /* FirebaseAnalytics */; };
@@ -95,6 +97,8 @@
 		F86E86952B417409005315D8 /* CacheManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerProtocol.swift; sourceTree = "<group>"; };
 		F86E86982B4176B2005315D8 /* CSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSToast.swift; sourceTree = "<group>"; };
 		F86E869A2B4176C1005315D8 /* CSToastType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSToastType.swift; sourceTree = "<group>"; };
+		F86E869C2B417A02005315D8 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F86E869E2B4181FF005315D8 /* CSToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSToastMessage.swift; sourceTree = "<group>"; };
 		F86EADF12B40BB5B006E6DB1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F86EADF52B40D55E006E6DB1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F86EADFA2B40DBCB006E6DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			children = (
 				F86E86982B4176B2005315D8 /* CSToast.swift */,
 				F86E869A2B4176C1005315D8 /* CSToastType.swift */,
+				F86E869E2B4181FF005315D8 /* CSToastMessage.swift */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 				F8DF47A72B40AF9800F52351 /* View+Extensions.swift */,
 				F8DF47A82B40AF9800F52351 /* Font+Extensions.swift */,
 				F8DF47A92B40AF9800F52351 /* Color+Extensions.swift */,
+				F86E869C2B417A02005315D8 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -839,6 +845,7 @@
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */,
 				F8DF47C02B40AF9800F52351 /* Reachability.swift in Sources */,
+				F86E869F2B4181FF005315D8 /* CSToastMessage.swift in Sources */,
 				F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */,
 				F86EAE092B40E0E1006E6DB1 /* TabItems.swift in Sources */,
 				F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */,
@@ -848,6 +855,7 @@
 				F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */,
 				F8DF47CF2B40AF9800F52351 /* Codable+Extensions.swift in Sources */,
 				F8DF47BB2B40AF9800F52351 /* CacheManager.swift in Sources */,
+				F86E869D2B417A02005315D8 /* String+Extensions.swift in Sources */,
 				F8DF47DC2B40AF9800F52351 /* CacheProtocol.swift in Sources */,
 				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
 				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,

@@ -67,7 +67,7 @@ struct LoginView: View {
                 )
                 
                 Button(action: {
-                    // TODO: - Change to Register flow
+                    router.navigate(to: .registration)
                 }, label: {
                     CSText(
                         text: "Create a new one",
