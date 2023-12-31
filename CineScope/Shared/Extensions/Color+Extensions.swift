@@ -12,6 +12,9 @@ extension Color {
         static let primary = Color("csPrimary")
         static let secondary = Color("csSecondary")
         static let background = Color("csBackground")
+        static let success = Color("csSuccess")
+        static let error = Color("csError")
+        static let info = Color("csInfo")
         static let white = Color("csWhite")
         static let placeholder = Color("csPlaceholder")
     }

@@ -13,8 +13,26 @@ extension View {
     }
     
     func endTextEditing() {
-      UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
-                                      to: nil, from: nil, for: nil)
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                        to: nil, from: nil, for: nil)
+    }
+    
+    func toast(isPresented: Binding<Bool>, type: CSToastType, message: String) -> some View {
+        self.overlay(
+            VStack {
+                if isPresented.wrappedValue {
+                    CSToast(message: message, toastType: type)
+                        .transition(.slide)
+                        .onAppear(perform: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                isPresented.wrappedValue = false
+                            }
+                        })
+                }
+                
+                Spacer()
+                
+            }, alignment: .top
+        )
     }
 }
-

@@ -10,13 +10,24 @@ import SwiftUI
 struct CSLoadingView: View {
     var body: some View {
         ZStack {
-            Color.black.opacity(0.4).edgesIgnoringSafeArea(.all)
-            ProgressView("Loading...")
-                .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                .frame(width: 100, height: 100)
-                .background(Color.secondary.colorInvert())
-                .foregroundColor(.primary)
-                .cornerRadius(10)
+            Color.black.opacity(0.5).edgesIgnoringSafeArea(.all)
+
+            VStack(spacing: 30) {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .Brand.white))
+                    .scaleEffect(2)
+
+                Text("Loading...")
+                    .font(.brand(.black, size: 16))
+                    .foregroundColor(.white)
+            }
+            .padding(30)
+            .cornerRadius(15)
+            .shadow(radius: 10)
         }
     }
+}
+
+#Preview {
+    CSLoadingView()
 }

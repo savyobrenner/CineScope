@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F86E86942B4172D0005315D8 /* ServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */; };
 		F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86952B417409005315D8 /* CacheManagerProtocol.swift */; };
+		F86E86992B4176B2005315D8 /* CSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86982B4176B2005315D8 /* CSToast.swift */; };
+		F86E869B2B4176C1005315D8 /* CSToastType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E869A2B4176C1005315D8 /* CSToastType.swift */; };
 		F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADF12B40BB5B006E6DB1 /* LoginView.swift */; };
 		F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EADF52B40D55E006E6DB1 /* Router.swift */; };
 		F86EADF92B40DBB9006E6DB1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F86EADF82B40DBB9006E6DB1 /* FirebaseAnalytics */; };
@@ -91,6 +93,8 @@
 /* Begin PBXFileReference section */
 		F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocatorProtocol.swift; sourceTree = "<group>"; };
 		F86E86952B417409005315D8 /* CacheManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerProtocol.swift; sourceTree = "<group>"; };
+		F86E86982B4176B2005315D8 /* CSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSToast.swift; sourceTree = "<group>"; };
+		F86E869A2B4176C1005315D8 /* CSToastType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSToastType.swift; sourceTree = "<group>"; };
 		F86EADF12B40BB5B006E6DB1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F86EADF52B40D55E006E6DB1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F86EADFA2B40DBCB006E6DB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 				F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */,
 			);
 			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
+		F86E86972B41756C005315D8 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F86E86982B4176B2005315D8 /* CSToast.swift */,
+				F86E869A2B4176C1005315D8 /* CSToastType.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		F86EADEF2B40BB04006E6DB1 /* Login */ = {
@@ -532,6 +545,7 @@
 		F8DF47942B40AF9800F52351 /* DS */ = {
 			isa = PBXGroup;
 			children = (
+				F86E86972B41756C005315D8 /* Toast */,
 				F86EAE222B40F2D3006E6DB1 /* Loading */,
 				F8DF47952B40AF9800F52351 /* TextField */,
 				F8DF47972B40AF9800F52351 /* Styles */,
@@ -813,6 +827,7 @@
 				F86EAE152B40E4A2006E6DB1 /* DownloadsView.swift in Sources */,
 				F86EAE192B40EBD1006E6DB1 /* FirebaseManager.swift in Sources */,
 				F86EADFB2B40DBCB006E6DB1 /* AppDelegate.swift in Sources */,
+				F86E869B2B4176C1005315D8 /* CSToastType.swift in Sources */,
 				F8DF47BC2B40AF9800F52351 /* StorageKey.swift in Sources */,
 				F8DF47BD2B40AF9800F52351 /* StorageError.swift in Sources */,
 				F8DF47EF2B40B1E200F52351 /* SplashScreenView.swift in Sources */,
@@ -841,6 +856,7 @@
 				F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */,
 				F8DF47B82B40AF9800F52351 /* Constants.swift in Sources */,
 				F8DF47D22B40AF9800F52351 /* Color+Extensions.swift in Sources */,
+				F86E86992B4176B2005315D8 /* CSToast.swift in Sources */,
 				F8DF47CE2B40AF9800F52351 /* CSButtonStyle.swift in Sources */,
 				F86EAE052B40E00D006E6DB1 /* MainTabBarView.swift in Sources */,
 				F8DF47BE2B40AF9800F52351 /* MoyaManager.swift in Sources */,
