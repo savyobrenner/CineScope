@@ -214,11 +214,11 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     private var contentOptions: some View {
         HStack(alignment: .center) {
             Spacer()
-            buttonView(imageName: "info_icon", text: "Info")
-            Spacer()
-            buttonView(imageName: "play_icon", text: "Play", frameSize: 38)
-            Spacer()
-            buttonView(imageName: "plus_icon", text: "Add")
+            buttonView(imageName: "info_icon", text: "Info".localized)
+            Spacer(minLength: 20)
+            buttonView(imageName: "play_icon", text: "Play".localized, frameSize: 40)
+            Spacer(minLength: 20)
+            buttonView(imageName: "plus_icon", text: "Add".localized)
             Spacer()
         }
     }
@@ -236,10 +236,12 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     type: .medium,
                     color: .Brand.white
                 )
+                .multilineTextAlignment(.center)
             }
         }
     }
 }
+
 
 import Factory
 #Preview {

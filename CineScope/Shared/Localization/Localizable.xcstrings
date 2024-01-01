@@ -17,6 +17,9 @@
         }
       }
     },
+    "Add" : {
+      "extractionState" : "manual"
+    },
     "Create a new one" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -136,6 +139,9 @@
         }
       }
     },
+    "Info" : {
+      "extractionState" : "manual"
+    },
     "Invalid email format." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -254,6 +260,9 @@
           }
         }
       }
+    },
+    "Play" : {
+      "extractionState" : "manual"
     },
     "Popular Movies" : {
       "extractionState" : "manual"
