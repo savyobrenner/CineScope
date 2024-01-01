@@ -29,7 +29,6 @@ struct MainTabBarView: View {
                 DownloadsView()
                     .tag(2)
             }
-            .hidden()
             
             ZStack {
                 HStack {
@@ -70,7 +69,7 @@ private extension MainTabBarView {
             
             if isActive {
                 Text(title)
-                    .font(.brand(.semibold, size: 11))
+                    .font(.brand(.semibold, size: 14))
                     .foregroundColor(isActive ? .Brand.white : .gray)
             }
             

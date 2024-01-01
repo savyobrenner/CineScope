@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SplashScreenView: View {
-    @EnvironmentObject var router: Router
+struct SplashScreenView<ViewModel: SplashScreenViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {
@@ -21,12 +21,18 @@ struct SplashScreenView: View {
         .ignoresSafeArea()
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-                router.navigate(to: .login)
+                viewModel.proceedNavigation()
             }
         }
     }
 }
 
+import Factory
+
 #Preview {
-    SplashScreenView()
+    SplashScreenView(
+        viewModel: SplashScreenViewModel(
+            router: Router(),
+            serviceLocator: Container.shared.serviceLocator.resolve()
+        ))
 }

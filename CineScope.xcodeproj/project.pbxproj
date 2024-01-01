@@ -44,6 +44,8 @@
 		F8CB82462B43043500536878 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */; };
 		F8CB82492B4304A800536878 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82482B4304A800536878 /* HomeViewModel.swift */; };
 		F8CB824B2B4309B200536878 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB824A2B4309B200536878 /* User.swift */; };
+		F8CB824F2B430F6F00536878 /* SplashScreenViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB824E2B430F6F00536878 /* SplashScreenViewModelProtocol.swift */; };
+		F8CB82512B430F8500536878 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82502B430F8500536878 /* SplashScreenViewModel.swift */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -139,6 +141,8 @@
 		F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
 		F8CB82482B4304A800536878 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F8CB824A2B4309B200536878 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F8CB824E2B430F6F00536878 /* SplashScreenViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModelProtocol.swift; sourceTree = "<group>"; };
+		F8CB82502B430F8500536878 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -469,6 +473,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F8CB824C2B430F5C00536878 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB82502B430F8500536878 /* SplashScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F8CB824D2B430F6000536878 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB824E2B430F6F00536878 /* SplashScreenViewModelProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		F8DF47462B40AF0D00F52351 = {
 			isa = PBXGroup;
 			children = (
@@ -765,6 +785,8 @@
 		F8DF47ED2B40B1CE00F52351 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				F8CB824D2B430F6000536878 /* Protocol */,
+				F8CB824C2B430F5C00536878 /* ViewModel */,
 				F86EADF32B40BB6D006E6DB1 /* View */,
 			);
 			path = Splash;
@@ -924,6 +946,7 @@
 				F86EAE022B40DE7C006E6DB1 /* RegistrationView.swift in Sources */,
 				F8DF47C52B40AF9800F52351 /* CSTextField.swift in Sources */,
 				F8DF47F02B40B59C00F52351 /* Endpoint.swift in Sources */,
+				F8CB824F2B430F6F00536878 /* SplashScreenViewModelProtocol.swift in Sources */,
 				F8DF47D02B40AF9800F52351 /* View+Extensions.swift in Sources */,
 				F86EAE172B40EAB9006E6DB1 /* AuthenticationProtocol.swift in Sources */,
 				F8DF47C82B40AF9800F52351 /* CSButton.swift in Sources */,
@@ -973,6 +996,7 @@
 				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
 				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
+				F8CB82512B430F8500536878 /* SplashScreenViewModel.swift in Sources */,
 				F86EAE212B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift in Sources */,
 				F8DF47CD2B40AF9800F52351 /* BrandFontName.swift in Sources */,
 				F86CB93C2B41920D0031606F /* LoginViewModel.swift in Sources */,

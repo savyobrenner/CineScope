@@ -14,7 +14,7 @@ enum AppEnvironment {
     }
     
     static var baseURL: String {
-        return "http://api.themoviedb.org/3/b"
+        return "https://api.themoviedb.org/3/"
     }
     
     static var imagesBaseURL: String {

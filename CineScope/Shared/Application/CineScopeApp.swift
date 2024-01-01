@@ -18,31 +18,34 @@ struct CineScopeApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
-                SplashScreenView()
-                    .navigationDestination(for: Router.Destination.self) { destination in
-                        switch destination {
-                        case .login:
-                            LoginView(
-                                viewModel: LoginViewModel(
-                                    authenticationService: Container.shared.authenticationServices.resolve(),
-                                    router: router, 
-                                    serviceLocator: Container.shared.serviceLocator.resolve()
-                                )
+                SplashScreenView(viewModel: SplashScreenViewModel(
+                    router: router,
+                    serviceLocator: Container.shared.serviceLocator.resolve())
+                )
+                .navigationDestination(for: Router.Destination.self) { destination in
+                    switch destination {
+                    case .login:
+                        LoginView(
+                            viewModel: LoginViewModel(
+                                authenticationService: Container.shared.authenticationServices.resolve(),
+                                router: router, 
+                                serviceLocator: Container.shared.serviceLocator.resolve()
                             )
+                        )
+                        .navigationBarBackButtonHidden(true)
+                    case .registration:
+                        RegistrationView(
+                            viewModel: RegistrationViewModel(
+                                authenticationService: Container.shared.authenticationServices.resolve(),
+                                router: router,
+                                serviceLocator: Container.shared.serviceLocator.resolve()
+                            )
+                        )
+                    case .tabBar:
+                        MainTabBarView()
                             .navigationBarBackButtonHidden(true)
-                        case .registration:
-                            RegistrationView(
-                                viewModel: RegistrationViewModel(
-                                    authenticationService: Container.shared.authenticationServices.resolve(),
-                                    router: router,
-                                    serviceLocator: Container.shared.serviceLocator.resolve()
-                                )
-                            )
-                        case .tabBar:
-                            MainTabBarView()
-                                .navigationBarBackButtonHidden(true)
-                        }
                     }
+                }
             }
             .environmentObject(router)
         }
