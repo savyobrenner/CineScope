@@ -8,5 +8,8 @@
 import Foundation
 
 protocol HomeServicesProtocol {
-    func fetchPopularMovies(onSuccess: @escaping (Result<ListOfMovies, CSError>) -> Void)
+    func fetchPopularMovies(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void)
+    func fetchTopRatedMovies(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void)
+    func fetchPopularTVShows(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void)
+    func fetchTopRatedTVShows(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void)
 }

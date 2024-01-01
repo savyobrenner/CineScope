@@ -35,15 +35,15 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             Spacer()
         }
     }
-
+    
     private var mainImageSection: some View {
         Group {
-            if let posterPath = viewModel.movies.first?.posterPathURL {
+            if let posterPath = viewModel.contents.first?.posterPathURL {
                 mainImage(url: posterPath)
             }
         }
     }
-
+    
     private var sectionsListView: some View {
         ForEach(viewModel.sections, id: \.title) { section in
             VStack(alignment: .leading, spacing: 0) {
@@ -51,7 +51,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     .foregroundColor(.Brand.white)
                     .font(.brand(.bold, size: 16))
                     .padding()
-
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         ForEach(section.items, id: \.title) { item in
@@ -64,7 +64,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
         }
     }
     
-    private func itemCard(for item: Movie, isHorizontal: Bool = false) -> some View {
+    private func itemCard(for item: MediaModel, isHorizontal: Bool = false) -> some View {
         VStack(alignment: .center, spacing: 10) {
             if let posterPathURL = item.backdropPathURL {
                 CSImageView(url: posterPathURL)
@@ -123,7 +123,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                 Color.Brand.secondGradient.opacity(0.5),
                 Color.Brand.thirdGradient.opacity(1)
             ]),
-            startPoint: .bottomLeading, endPoint: .bottomTrailing
+                       startPoint: .bottomLeading, endPoint: .bottomTrailing
         )
         .frame(height: 390)
     }
@@ -138,7 +138,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     private var contentTitle: some View {
         CSText(
-            text: viewModel.movies.first?.title ?? "",
+            text: viewModel.contents.first?.title ?? "",
             size: 18,
             type: .semibold,
             color: .Brand.white
@@ -196,7 +196,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             }
         }
     }
-        
+    
     private var contentOptions: some View {
         HStack(alignment: .center) {
             Spacer()

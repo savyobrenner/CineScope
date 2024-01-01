@@ -39,8 +39,8 @@
 		F87B159A2B41978400B0B1C0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F87B15992B41978400B0B1C0 /* Localizable.xcstrings */; };
 		F8CB82362B41D31800536878 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82352B41D31800536878 /* Languages.swift */; };
 		F8CB82382B42E5C700536878 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82372B42E5C700536878 /* HomeEndpoint.swift */; };
-		F8CB823C2B4301E400536878 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823B2B4301E400536878 /* Movie.swift */; };
-		F8CB823E2B43021100536878 /* ListOfMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823D2B43021100536878 /* ListOfMovies.swift */; };
+		F8CB823C2B4301E400536878 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823B2B4301E400536878 /* MediaModel.swift */; };
+		F8CB823E2B43021100536878 /* ListOfItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823D2B43021100536878 /* ListOfItems.swift */; };
 		F8CB82422B4302F000536878 /* HomeServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82412B4302F000536878 /* HomeServicesProtocol.swift */; };
 		F8CB82442B43034500536878 /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82432B43034500536878 /* HomeServices.swift */; };
 		F8CB82462B43043500536878 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */; };
@@ -138,8 +138,8 @@
 		F87B15992B41978400B0B1C0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F8CB82352B41D31800536878 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		F8CB82372B42E5C700536878 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
-		F8CB823B2B4301E400536878 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		F8CB823D2B43021100536878 /* ListOfMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMovies.swift; sourceTree = "<group>"; };
+		F8CB823B2B4301E400536878 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
+		F8CB823D2B43021100536878 /* ListOfItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfItems.swift; sourceTree = "<group>"; };
 		F8CB82412B4302F000536878 /* HomeServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServicesProtocol.swift; sourceTree = "<group>"; };
 		F8CB82432B43034500536878 /* HomeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
 		F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -462,8 +462,8 @@
 		F8CB823A2B4301D500536878 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F8CB823B2B4301E400536878 /* Movie.swift */,
-				F8CB823D2B43021100536878 /* ListOfMovies.swift */,
+				F8CB823B2B4301E400536878 /* MediaModel.swift */,
+				F8CB823D2B43021100536878 /* ListOfItems.swift */,
 				F8CB824A2B4309B200536878 /* User.swift */,
 			);
 			path = Models;
@@ -976,7 +976,7 @@
 				F8DF47BA2B40AF9800F52351 /* UserDefaultsStorage.swift in Sources */,
 				F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */,
 				F8DF47BF2B40AF9800F52351 /* NetworkProtocol.swift in Sources */,
-				F8CB823C2B4301E400536878 /* Movie.swift in Sources */,
+				F8CB823C2B4301E400536878 /* MediaModel.swift in Sources */,
 				F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */,
 				F86E86942B4172D0005315D8 /* ServiceLocatorProtocol.swift in Sources */,
 				F86EAE0F2B40E48B006E6DB1 /* HomeView.swift in Sources */,
@@ -995,7 +995,7 @@
 				F8DF47B92B40AF9800F52351 /* AppEnviroment.swift in Sources */,
 				F86EAE242B40F2DA006E6DB1 /* CSLoadingView.swift in Sources */,
 				F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */,
-				F8CB823E2B43021100536878 /* ListOfMovies.swift in Sources */,
+				F8CB823E2B43021100536878 /* ListOfItems.swift in Sources */,
 				F86EAE1E2B40F0B6006E6DB1 /* RegistrationViewModel.swift in Sources */,
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */,

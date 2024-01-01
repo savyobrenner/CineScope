@@ -14,7 +14,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     var isLoading: Bool = false
     var toastMessage: CSToastMessage?
-    var movies: [Movie] = []
+    var contents: [MediaModel] = []
     
     var user: User? {
         serviceLocator.userSettings.user
@@ -38,9 +38,9 @@ final class HomeViewModel: HomeViewModelProtocol {
             self?.isLoading = false
             switch result {
             case .success(let success):
-                if let movies = success.results {
-                    self?.movies = movies
-                    self?.sections = [.init(title: "Popular Movies".localized, items: movies, horizontal: true)]
+                if let contents = success.results {
+                    self?.contents = contents
+                    self?.sections = [.init(title: "Popular Movies".localized, items: contents, horizontal: true)]
                     return
                 }
                 

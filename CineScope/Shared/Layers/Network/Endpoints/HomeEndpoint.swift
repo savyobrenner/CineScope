@@ -10,6 +10,9 @@ import SwiftUI
 
 enum HomeEndpoint {
     case fetchPopularMovies
+    case fetchTopRatedMovies
+    case fetchPopularTVShows
+    case fetchTopRatedTVShows
 }
 
 // MARK: - Endpoint Builder
@@ -26,12 +29,18 @@ extension HomeEndpoint: Endpoint {
         switch self {
         case .fetchPopularMovies:
             return "movie/popular"
+        case .fetchTopRatedMovies:
+            return "movie/top_rated"
+        case .fetchPopularTVShows:
+            return "tv/popular"
+        case .fetchTopRatedTVShows:
+            return "tv/top_rated"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .fetchPopularMovies:
+        case .fetchPopularMovies, .fetchTopRatedMovies, .fetchPopularTVShows, .fetchTopRatedTVShows:
             return .get
         }
     }
@@ -40,7 +49,7 @@ extension HomeEndpoint: Endpoint {
         var params = [String: Any]()
         
         switch self {
-        case .fetchPopularMovies:
+        case .fetchPopularMovies, .fetchTopRatedMovies, .fetchPopularTVShows, .fetchTopRatedTVShows:
             params["language"] = Language.current.rawValue
         }
         
