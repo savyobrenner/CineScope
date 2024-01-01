@@ -20,6 +20,8 @@ final class HomeViewModel: HomeViewModelProtocol {
         serviceLocator.userSettings.user
     }
     
+    var sections: [SectionModel] = []
+
     init(
         homeServices: HomeServicesProtocol,
         router: Router,

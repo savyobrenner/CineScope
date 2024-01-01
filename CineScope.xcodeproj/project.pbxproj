@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F853DC552B4350C200958EA3 /* CSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DC542B4350C200958EA3 /* CSImageView.swift */; };
+		F853DC5A2B43540700958EA3 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DC592B43540700958EA3 /* SectionModel.swift */; };
 		F86CB93C2B41920D0031606F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86CB93B2B41920D0031606F /* LoginViewModel.swift */; };
 		F86CB93F2B4192290031606F /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86CB93E2B4192290031606F /* LoginViewModelProtocol.swift */; };
 		F86E86942B4172D0005315D8 /* ServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */; };
@@ -107,6 +109,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F853DC542B4350C200958EA3 /* CSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSImageView.swift; sourceTree = "<group>"; };
+		F853DC592B43540700958EA3 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		F86CB93B2B41920D0031606F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F86CB93E2B4192290031606F /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		F86E86932B4172D0005315D8 /* ServiceLocatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocatorProtocol.swift; sourceTree = "<group>"; };
@@ -218,6 +222,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F853DC562B4353A900958EA3 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F853DC542B4350C200958EA3 /* CSImageView.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		F853DC582B4353D300958EA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F853DC592B43540700958EA3 /* SectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F86CB93A2B4192050031606F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +362,7 @@
 		F86EAE0A2B40E475006E6DB1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F853DC582B4353D300958EA3 /* Model */,
 				F8CB82402B4302E800536878 /* Protocols */,
 				F8CB823F2B43025E00536878 /* Services */,
 				F86EAE0D2B40E485006E6DB1 /* View */,
@@ -670,6 +691,7 @@
 		F8DF47942B40AF9800F52351 /* DS */ = {
 			isa = PBXGroup;
 			children = (
+				F853DC562B4353A900958EA3 /* ImageView */,
 				F86E86972B41756C005315D8 /* Toast */,
 				F86EAE222B40F2D3006E6DB1 /* Loading */,
 				F8DF47952B40AF9800F52351 /* TextField */,
@@ -943,6 +965,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F853DC552B4350C200958EA3 /* CSImageView.swift in Sources */,
 				F86EAE022B40DE7C006E6DB1 /* RegistrationView.swift in Sources */,
 				F8DF47C52B40AF9800F52351 /* CSTextField.swift in Sources */,
 				F8DF47F02B40B59C00F52351 /* Endpoint.swift in Sources */,
@@ -995,6 +1018,7 @@
 				F8CB82382B42E5C700536878 /* HomeEndpoint.swift in Sources */,
 				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
 				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,
+				F853DC5A2B43540700958EA3 /* SectionModel.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
 				F8CB82512B430F8500536878 /* SplashScreenViewModel.swift in Sources */,
 				F86EAE212B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift in Sources */,

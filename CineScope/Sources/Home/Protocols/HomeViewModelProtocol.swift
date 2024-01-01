@@ -12,5 +12,6 @@ protocol HomeViewModelProtocol: ObservableObject {
     var toastMessage: CSToastMessage? { get set }
     var movies: [Movie] { get }
     var user: User? { get }
+    var sections: [SectionModel] { get set }
     func fetchPopularMovies()
 }

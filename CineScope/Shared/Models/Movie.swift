@@ -34,4 +34,8 @@ struct Movie: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+    var posterPathURL: URL? {
+        return URL(string: AppEnvironment.imagesBaseURL + (posterPath ?? ""))
+    }
 }
