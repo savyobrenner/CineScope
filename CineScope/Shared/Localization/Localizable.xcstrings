@@ -258,7 +258,16 @@
     "Popular Movies" : {
       "extractionState" : "manual"
     },
+    "Popular TV Shows" : {
+      "extractionState" : "manual"
+    },
     "Something went wrong, try again" : {
+      "extractionState" : "manual"
+    },
+    "Top Rated Movies" : {
+      "extractionState" : "manual"
+    },
+    "Top Rated TV Shows" : {
       "extractionState" : "manual"
     }
   },

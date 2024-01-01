@@ -19,14 +19,14 @@ class HomeServices: HomeServicesProtocol {
     }
     
     func fetchTopRatedMovies(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
-        network.request(HomeEndpoint.fetchPopularMovies, expectedType: ListOfItems.self, onSuccess)
+        network.request(HomeEndpoint.fetchTopRatedMovies, expectedType: ListOfItems.self, onSuccess)
     }
     
     func fetchPopularTVShows(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
-        network.request(HomeEndpoint.fetchPopularMovies, expectedType: ListOfItems.self, onSuccess)
+        network.request(HomeEndpoint.fetchPopularTVShows, expectedType: ListOfItems.self, onSuccess)
     }
     
     func fetchTopRatedTVShows(onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
-        network.request(HomeEndpoint.fetchPopularMovies, expectedType: ListOfItems.self, onSuccess)
+        network.request(HomeEndpoint.fetchTopRatedTVShows, expectedType: ListOfItems.self, onSuccess)
     }
 }

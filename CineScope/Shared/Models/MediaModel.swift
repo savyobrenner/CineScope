@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct MediaModel: Codable {
+struct MediaModel: Codable, Identifiable {
+    let uuid = UUID()
     let adult: Bool?
+    let name: String?
     let backdropPath: String?
     let genreIDS: [Int]?
     let id: Int?
@@ -22,6 +24,7 @@ struct MediaModel: Codable {
 
     enum CodingKeys: String, CodingKey {
         case adult
+        case name
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
         case id

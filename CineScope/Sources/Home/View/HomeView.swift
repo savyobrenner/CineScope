@@ -13,11 +13,17 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     var body: some View {
         ZStack {
             backgroundImage
-            contentStack
-            overlayContent
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 0) {
+                    mainImageSection
+                    sectionsListView
+                }
+                .padding(.bottom, 80)
+            }
+            
             loadingView
         }
-        .onAppear(perform: viewModel.fetchPopularMovies)
+        .onAppear(perform: viewModel.fetchData)
         .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
     }
     
@@ -38,8 +44,16 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     private var mainImageSection: some View {
         Group {
-            if let posterPath = viewModel.contents.first?.posterPathURL {
-                mainImage(url: posterPath)
+            if let posterPath = viewModel.popularMovies.first?.posterPathURL {
+                ZStack(alignment: .top) {
+                    mainImage(url: posterPath)
+                    VStack {
+                        header
+                        Spacer()
+                    }
+                    .padding(.top, 80)
+                    contentInfoOverlay
+                }
             }
         }
     }
@@ -54,20 +68,20 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
-                        ForEach(section.items, id: \.title) { item in
-                            itemCard(for: item)
+                        ForEach(section.items, id: \.uuid) { item in
+                            itemCard(for: item, isHorizontal: section.isHorizontal)
                         }
                     }
                 }
-                .frame(height: section.horizontal ? 170 : 240)
+                .frame(height: section.isHorizontal ? 170 : 240)
             }
         }
     }
     
-    private func itemCard(for item: MediaModel, isHorizontal: Bool = false) -> some View {
+    private func itemCard(for item: MediaModel, isHorizontal: Bool) -> some View {
         VStack(alignment: .center, spacing: 10) {
-            if let posterPathURL = item.backdropPathURL {
-                CSImageView(url: posterPathURL)
+            if let pathURL = isHorizontal ? item.backdropPathURL : item.posterPathURL {
+                CSImageView(url: pathURL)
                     .scaledToFill()
                     .frame(width: isHorizontal ? 180 : 125, height: isHorizontal ? 110 : 185)
                     .clipped()
@@ -75,7 +89,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     .shadow(radius: 10)
             }
             
-            Text(item.title ?? "")
+            Text((item.title ?? item.name) ?? "")
                 .font(.brand(.semibold, size: 14))
                 .foregroundColor(.Brand.white)
                 .multilineTextAlignment(.center)
@@ -133,12 +147,12 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             contentTitle
             contentOptions
         }
-        .padding(.top, -250)
+        .padding(.top, 235)
     }
     
     private var contentTitle: some View {
         CSText(
-            text: viewModel.contents.first?.title ?? "",
+            text: viewModel.popularMovies.first?.title ?? "",
             size: 18,
             type: .semibold,
             color: .Brand.white
@@ -156,7 +170,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     private var homeTitle: some View {
         CSText(
-            text: "Home",
+            text: "Home".localized,
             size: 19,
             type: .semibold,
             color: .Brand.white

@@ -10,8 +10,11 @@ import Foundation
 protocol HomeViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var toastMessage: CSToastMessage? { get set }
-    var contents: [MediaModel] { get }
+    var popularMovies: [MediaModel] { get }
+    var topRatedMovies: [MediaModel] { get }
+    var popularTVShows: [MediaModel] { get }
+    var topRatedTVShows: [MediaModel] { get }
     var user: User? { get }
     var sections: [SectionModel] { get set }
-    func fetchPopularMovies()
+    func fetchData()
 }

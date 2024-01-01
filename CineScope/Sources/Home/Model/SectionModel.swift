@@ -10,5 +10,5 @@ import Foundation
 struct SectionModel {
     let title: String
     let items: [MediaModel]
-    let horizontal: Bool
+    let isHorizontal: Bool
 }
