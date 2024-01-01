@@ -8,7 +8,17 @@
 import Factory
 
 extension Container {
-    var networkService: Factory<NetworkProtocol> {
+    var serviceLocator: Factory<ServiceLocatorProtocol> {
+        self {
+            ServiceLocator(
+                network: self.networkServices.resolve(),
+                cacheManager: self.cacheManager.resolve(),
+                userSettings: self.userSettings.resolve()
+            )
+        }.singleton
+    }
+    
+    var networkServices: Factory<NetworkProtocol> {
         self { MoyaManager() }
     }
     
@@ -20,17 +30,11 @@ extension Container {
         self { UserSettings() }
     }
     
-    var authenticationService: Factory<AuthenticationProtocol> {
+    var authenticationServices: Factory<AuthenticationProtocol> {
         self { FirebaseManager() }
     }
     
-    var serviceLocator: Factory<ServiceLocatorProtocol> {
-        self {
-            ServiceLocator(
-                network: self.networkService.resolve(),
-                cacheManager: self.cacheManager.resolve(),
-                userSettings: self.userSettings.resolve()
-            )
-        }.singleton
+    var homeServices: Factory<HomeServicesProtocol> {
+        self { HomeServices(network: self.networkServices.resolve()) }
     }
 }

@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Factory
 
 struct MainTabBarView: View {
+    
+    @EnvironmentObject var router: Router
     
     @State var selectedTab = 0
     
@@ -15,8 +18,10 @@ struct MainTabBarView: View {
         
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
-                HomeView()
-                    .tag(0)
+                HomeView(
+                    viewModel: HomeViewModel(homeServices: Container.shared.homeServices.resolve(), router: router)
+                )
+                .tag(0)
                 
                 SearchView()
                     .tag(1)

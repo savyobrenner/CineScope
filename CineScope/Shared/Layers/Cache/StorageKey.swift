@@ -8,12 +8,12 @@
 import Foundation
 
 public enum StorageKey: CaseIterable {
-    case token
+    case user
     
     var key: String {
         switch self {
-        case .token:
-            return "token"
+        case .user:
+            return "user"
         }
     }
 }

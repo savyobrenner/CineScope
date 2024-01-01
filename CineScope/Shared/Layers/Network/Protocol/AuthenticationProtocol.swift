@@ -7,12 +7,12 @@
 
 import Foundation
 
-public protocol AuthenticationProtocol {
+protocol AuthenticationProtocol {
     func login(with email: String,
                and password: String,
-               _ onResponse: @escaping (Result<String, CSError>) -> Void)
+               _ onResponse: @escaping (Result<User, CSError>) -> Void)
     func register(name: String,
                   email: String,
                   password: String,
-                  _ onResponse: @escaping (Result<String, CSError>) -> Void)
+                  _ onResponse: @escaping (Result<User, CSError>) -> Void)
 }

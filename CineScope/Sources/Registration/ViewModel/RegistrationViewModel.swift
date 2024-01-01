@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-class RegistrationViewModel: RegistrationViewModelProtocol {
+final class RegistrationViewModel: RegistrationViewModelProtocol {
     
     private let router: Router
     private let authenticationService: AuthenticationProtocol
+    private let serviceLocator: ServiceLocatorProtocol
     
     @Published var name: String = ""
     @Published var email: String = ""
@@ -20,9 +21,14 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
     
     @Published var toastMessage: CSToastMessage?
     
-    init(authenticationService: AuthenticationProtocol, router: Router) {
+    init(
+        authenticationService: AuthenticationProtocol,
+        router: Router,
+        serviceLocator: ServiceLocatorProtocol
+    ) {
         self.authenticationService = authenticationService
         self.router = router
+        self.serviceLocator = serviceLocator
     }
     
     func register() {
@@ -40,10 +46,11 @@ class RegistrationViewModel: RegistrationViewModelProtocol {
         ) { [weak self] result in
             self?.isLoading = false
             switch result {
-            case .success:
+            case let .success(response):
+                try? self?.serviceLocator.cacheManager.save(response, for: .user)
                 self?.router.navigate(to: .tabBar)
-            case .failure(let failure):
-                self?.toastMessage = .init(message: failure.localizedDescription, type: .error)
+            case let .failure(error):
+                self?.toastMessage = .init(message: error.localizedDescription, type: .error)
             }
         }
     }

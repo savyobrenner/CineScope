@@ -67,8 +67,9 @@ import Factory
 #Preview {
     RegistrationView(
         viewModel: RegistrationViewModel(
-            authenticationService: Container.shared.authenticationService(),
-            router: Router()
+            authenticationService: Container.shared.authenticationServices.resolve(),
+            router: Router(),
+            serviceLocator: Container.shared.serviceLocator.resolve()
         )
     )
 }

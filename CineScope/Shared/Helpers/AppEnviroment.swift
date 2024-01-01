@@ -5,16 +5,30 @@
 //  Created by Savyo Brenner on 30/12/23.
 //
 
-import Foundation
+import SwiftUI
 
 enum AppEnvironment {
-
+    
     static var websiteURL: String {
-        return "https://google.com.br"
+        return "https://www.themoviedb.org"
     }
     
     static var baseURL: String {
-        return "https://google.com.br"
+        return "http://api.themoviedb.org/3/b"
+    }
+    
+    static var imagesBaseURL: String {
+        return UIDevice.current.userInterfaceIdiom == .phone ?
+        "https://image.tmdb.org/t/p/w500/" :
+        "https://image.tmdb.org/t/p/w780/"
+    }
+    
+    static var userToken: String {
+        return "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZjMyZDYyNDFkNjk4YTNjODJlOTVjY2JlNDg1M2Q0MiIsInN1YiI6IjViZjQ5NDhiMGUwYTI2MzlkNjAzYjYzYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IyRdsYNNTqRIuIOstkiXdCsKZZxbmAyy-xXj2DN6l2s"
+    }
+    
+    static var currentLanguageURLParameter: String {
+        return "&language=\(Language.current.rawValue)"
     }
     
     static var appVersion: String {

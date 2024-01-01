@@ -10,13 +10,13 @@ import Foundation
 import Moya
 
 public protocol Endpoint: TargetType {
-    var requiresLogin: Bool { get }
+    var requiresToken: Bool { get }
 }
 
 extension Endpoint {
     
     private var userToken: String? {
-        return Container.shared.serviceLocator().userSettings.token
+        return AppEnvironment.userToken
     }
     
     var headers: [String: String]? {
@@ -28,7 +28,7 @@ extension Endpoint {
             "Accept": "application/json; charset=utf-8"
         ]
         
-        if let userToken = userToken, requiresLogin {
+        if let userToken = userToken, requiresToken {
             headers["Authorization"] = "Bearer \(userToken)"
         }
         

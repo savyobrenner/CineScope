@@ -24,16 +24,18 @@ struct CineScopeApp: App {
                         case .login:
                             LoginView(
                                 viewModel: LoginViewModel(
-                                    authenticationService: Container.shared.authenticationService(), 
-                                    router: router
+                                    authenticationService: Container.shared.authenticationServices.resolve(),
+                                    router: router, 
+                                    serviceLocator: Container.shared.serviceLocator.resolve()
                                 )
                             )
                             .navigationBarBackButtonHidden(true)
                         case .registration:
                             RegistrationView(
                                 viewModel: RegistrationViewModel(
-                                    authenticationService: Container.shared.authenticationService(), 
-                                    router: router
+                                    authenticationService: Container.shared.authenticationServices.resolve(),
+                                    router: router,
+                                    serviceLocator: Container.shared.serviceLocator.resolve()
                                 )
                             )
                         case .tabBar:

@@ -35,6 +35,15 @@
 		F86EAE272B40F47B006E6DB1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = F86EAE262B40F47B006E6DB1 /* Factory */; };
 		F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE292B40F490006E6DB1 /* Factory+Container.swift */; };
 		F87B159A2B41978400B0B1C0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F87B15992B41978400B0B1C0 /* Localizable.xcstrings */; };
+		F8CB82362B41D31800536878 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82352B41D31800536878 /* Languages.swift */; };
+		F8CB82382B42E5C700536878 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82372B42E5C700536878 /* HomeEndpoint.swift */; };
+		F8CB823C2B4301E400536878 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823B2B4301E400536878 /* Movie.swift */; };
+		F8CB823E2B43021100536878 /* ListOfMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823D2B43021100536878 /* ListOfMovies.swift */; };
+		F8CB82422B4302F000536878 /* HomeServicesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82412B4302F000536878 /* HomeServicesProtocol.swift */; };
+		F8CB82442B43034500536878 /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82432B43034500536878 /* HomeServices.swift */; };
+		F8CB82462B43043500536878 /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */; };
+		F8CB82492B4304A800536878 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82482B4304A800536878 /* HomeViewModel.swift */; };
+		F8CB824B2B4309B200536878 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB824A2B4309B200536878 /* User.swift */; };
 		F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */; };
 		F8DF47572B40AF0E00F52351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47562B40AF0E00F52351 /* Assets.xcassets */; };
 		F8DF475A2B40AF0E00F52351 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DF47592B40AF0E00F52351 /* Preview Assets.xcassets */; };
@@ -121,6 +130,15 @@
 		F86EAE232B40F2DA006E6DB1 /* CSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLoadingView.swift; sourceTree = "<group>"; };
 		F86EAE292B40F490006E6DB1 /* Factory+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Container.swift"; sourceTree = "<group>"; };
 		F87B15992B41978400B0B1C0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F8CB82352B41D31800536878 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		F8CB82372B42E5C700536878 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		F8CB823B2B4301E400536878 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F8CB823D2B43021100536878 /* ListOfMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMovies.swift; sourceTree = "<group>"; };
+		F8CB82412B4302F000536878 /* HomeServicesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServicesProtocol.swift; sourceTree = "<group>"; };
+		F8CB82432B43034500536878 /* HomeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
+		F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
+		F8CB82482B4304A800536878 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F8CB824A2B4309B200536878 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F8DF474F2B40AF0D00F52351 /* CineScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF47522B40AF0D00F52351 /* CineScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineScopeApp.swift; sourceTree = "<group>"; };
 		F8DF47562B40AF0E00F52351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -320,7 +338,10 @@
 		F86EAE0A2B40E475006E6DB1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F8CB82402B4302E800536878 /* Protocols */,
+				F8CB823F2B43025E00536878 /* Services */,
 				F86EAE0D2B40E485006E6DB1 /* View */,
+				F8CB82472B43047100536878 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -405,6 +426,49 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		F8CB82342B41CE5900536878 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB82372B42E5C700536878 /* HomeEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		F8CB823A2B4301D500536878 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB823B2B4301E400536878 /* Movie.swift */,
+				F8CB823D2B43021100536878 /* ListOfMovies.swift */,
+				F8CB824A2B4309B200536878 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8CB823F2B43025E00536878 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB82432B43034500536878 /* HomeServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F8CB82402B4302E800536878 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB82412B4302F000536878 /* HomeServicesProtocol.swift */,
+				F8CB82452B43043500536878 /* HomeViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F8CB82472B43047100536878 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F8CB82482B4304A800536878 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F8DF47462B40AF0D00F52351 = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +538,7 @@
 				F8DF477E2B40AF9800F52351 /* Helpers */,
 				F8DF47812B40AF9800F52351 /* Layers */,
 				F87B15982B41976200B0B1C0 /* Localization */,
+				F8CB823A2B4301D500536878 /* Models */,
 				F8DF47B62B40AF9800F52351 /* Protocols */,
 				F86EADF42B40D552006E6DB1 /* Router */,
 			);
@@ -499,6 +564,7 @@
 			children = (
 				F8DF477F2B40AF9800F52351 /* Constants.swift */,
 				F8DF47802B40AF9800F52351 /* AppEnviroment.swift */,
+				F8CB82352B41D31800536878 /* Languages.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -535,11 +601,12 @@
 		F8DF47882B40AF9800F52351 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F8DF47902B40AF9800F52351 /* Base */,
+				F8CB82342B41CE5900536878 /* Endpoints */,
 				F86EADFC2B40DC82006E6DB1 /* Firebase */,
 				F8DF47892B40AF9800F52351 /* Moya */,
 				F8DF478B2B40AF9800F52351 /* Protocol */,
 				F8DF478D2B40AF9800F52351 /* Reachability */,
-				F8DF47902B40AF9800F52351 /* Base */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -863,21 +930,26 @@
 				F8DF47BA2B40AF9800F52351 /* UserDefaultsStorage.swift in Sources */,
 				F86EADF62B40D55E006E6DB1 /* Router.swift in Sources */,
 				F8DF47BF2B40AF9800F52351 /* NetworkProtocol.swift in Sources */,
+				F8CB823C2B4301E400536878 /* Movie.swift in Sources */,
 				F8DF47532B40AF0D00F52351 /* CineScopeApp.swift in Sources */,
 				F86E86942B4172D0005315D8 /* ServiceLocatorProtocol.swift in Sources */,
 				F86EAE0F2B40E48B006E6DB1 /* HomeView.swift in Sources */,
 				F86EAE152B40E4A2006E6DB1 /* DownloadsView.swift in Sources */,
 				F86EAE192B40EBD1006E6DB1 /* FirebaseManager.swift in Sources */,
+				F8CB82422B4302F000536878 /* HomeServicesProtocol.swift in Sources */,
 				F86EADFB2B40DBCB006E6DB1 /* AppDelegate.swift in Sources */,
 				F86E869B2B4176C1005315D8 /* CSToastType.swift in Sources */,
 				F8DF47BC2B40AF9800F52351 /* StorageKey.swift in Sources */,
 				F8DF47BD2B40AF9800F52351 /* StorageError.swift in Sources */,
+				F8CB82442B43034500536878 /* HomeServices.swift in Sources */,
 				F86CB93F2B4192290031606F /* LoginViewModelProtocol.swift in Sources */,
 				F8DF47EF2B40B1E200F52351 /* SplashScreenView.swift in Sources */,
 				F8DF47D12B40AF9800F52351 /* Font+Extensions.swift in Sources */,
+				F8CB82462B43043500536878 /* HomeViewModelProtocol.swift in Sources */,
 				F8DF47B92B40AF9800F52351 /* AppEnviroment.swift in Sources */,
 				F86EAE242B40F2DA006E6DB1 /* CSLoadingView.swift in Sources */,
 				F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */,
+				F8CB823E2B43021100536878 /* ListOfMovies.swift in Sources */,
 				F86EAE1E2B40F0B6006E6DB1 /* RegistrationViewModel.swift in Sources */,
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */,
@@ -887,13 +959,17 @@
 				F86EAE092B40E0E1006E6DB1 /* TabItems.swift in Sources */,
 				F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */,
 				F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */,
+				F8CB82362B41D31800536878 /* Languages.swift in Sources */,
 				F8DF47CB2B40AF9800F52351 /* ServiceLocator.swift in Sources */,
 				F86EAE122B40E495006E6DB1 /* SearchView.swift in Sources */,
 				F86EADF22B40BB5B006E6DB1 /* LoginView.swift in Sources */,
 				F8DF47CF2B40AF9800F52351 /* Codable+Extensions.swift in Sources */,
+				F8CB82492B4304A800536878 /* HomeViewModel.swift in Sources */,
 				F8DF47BB2B40AF9800F52351 /* CacheManager.swift in Sources */,
 				F86E869D2B417A02005315D8 /* String+Extensions.swift in Sources */,
 				F8DF47DC2B40AF9800F52351 /* CacheProtocol.swift in Sources */,
+				F8CB824B2B4309B200536878 /* User.swift in Sources */,
+				F8CB82382B42E5C700536878 /* HomeEndpoint.swift in Sources */,
 				F8DF47C92B40AF9800F52351 /* CSText.swift in Sources */,
 				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,

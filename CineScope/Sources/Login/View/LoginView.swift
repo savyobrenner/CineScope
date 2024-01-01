@@ -97,8 +97,9 @@ import Factory
 #Preview {
     LoginView(
         viewModel: LoginViewModel(
-            authenticationService: Container.shared.authenticationService(),
-            router: Router()
+            authenticationService: Container.shared.authenticationServices(),
+            router: Router(), 
+            serviceLocator: Container.shared.serviceLocator()
         )
     )
 }
