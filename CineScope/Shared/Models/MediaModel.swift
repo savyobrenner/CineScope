@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MediaModel: Codable, Identifiable {
+struct MediaModel: Codable, Identifiable, Equatable {
     let uuid = UUID()
     let adult: Bool?
     let name: String?

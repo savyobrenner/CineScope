@@ -16,5 +16,7 @@ protocol HomeViewModelProtocol: ObservableObject {
     var topRatedTVShows: [MediaModel] { get }
     var user: User? { get }
     var sections: [SectionModel] { get set }
+    var selectedContent: MediaModel? { get set }
     func fetchData()
+    func selectContentPreview(for media: MediaModel?)
 }

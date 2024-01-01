@@ -19,6 +19,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     @Published var isLoading: Bool = false
     @Published var toastMessage: CSToastMessage?
+    @Published var selectedContent: MediaModel?
     
     var popularMovies: [MediaModel] = []
     var topRatedMovies: [MediaModel] = []
@@ -54,6 +55,10 @@ final class HomeViewModel: HomeViewModelProtocol {
         fetchPopularTVShows()
         fetchTopRatedTVShows()
     }
+    
+    func selectContentPreview(for media: MediaModel?) {
+        self.selectedContent = media
+    }
 }
 
 private extension HomeViewModel {
@@ -74,6 +79,7 @@ private extension HomeViewModel {
         switch category {
         case .popularMovies:
             popularMovies = contents
+            selectedContent = contents.first
             let section = SectionModel(title: "Popular Movies".localized, items: contents, isHorizontal: true)
             addOrUpdateSection(section, for: category)
         case .topRatedMovies:

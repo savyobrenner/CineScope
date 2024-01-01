@@ -44,9 +44,10 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     private var mainImageSection: some View {
         Group {
-            if let posterPath = viewModel.popularMovies.first?.posterPathURL {
+            if let posterPath = viewModel.selectedContent?.posterPathURL {
                 ZStack(alignment: .top) {
                     mainImage(url: posterPath)
+                        .id(posterPath)
                     VStack {
                         header
                         Spacer()
@@ -54,6 +55,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     .padding(.top, 80)
                     contentInfoOverlay
                 }
+                .animation(.easeInOut(duration: 0.5), value: viewModel.selectedContent)
             }
         }
     }
@@ -79,23 +81,29 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     }
     
     private func itemCard(for item: MediaModel, isHorizontal: Bool) -> some View {
-        VStack(alignment: .center, spacing: 10) {
-            if let pathURL = isHorizontal ? item.backdropPathURL : item.posterPathURL {
-                CSImageView(url: pathURL)
-                    .scaledToFill()
-                    .frame(width: isHorizontal ? 180 : 125, height: isHorizontal ? 110 : 185)
-                    .clipped()
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
+        Button(action: {
+            if isHorizontal {
+                viewModel.selectContentPreview(for: item)
             }
-            
-            Text((item.title ?? item.name) ?? "")
-                .font(.brand(.semibold, size: 14))
-                .foregroundColor(.Brand.white)
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .minimumScaleFactor(0.6)
-                .frame(height: 40)
+        }) {
+            VStack(alignment: .center, spacing: 10) {
+                if let pathURL = isHorizontal ? item.backdropPathURL : item.posterPathURL {
+                    CSImageView(url: pathURL)
+                        .scaledToFill()
+                        .frame(width: isHorizontal ? 180 : 125, height: isHorizontal ? 110 : 185)
+                        .clipped()
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                }
+                
+                Text((item.title ?? item.name) ?? "")
+                    .font(.brand(.semibold, size: 14))
+                    .foregroundColor(.Brand.white)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.6)
+                    .frame(height: 40)
+            }
         }
         .frame(width: isHorizontal ? 180 : 125)
         .padding(.horizontal, 16)
@@ -128,6 +136,8 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             .overlay(mainImageGradient)
             .clipped()
             .ignoresSafeArea()
+            .transition(.opacity)
+            .animation(.easeInOut(duration: 0.5), value: url)
     }
     
     private var mainImageGradient: some View {
@@ -152,11 +162,12 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     private var contentTitle: some View {
         CSText(
-            text: viewModel.popularMovies.first?.title ?? "",
+            text: viewModel.selectedContent?.title ?? "",
             size: 18,
             type: .semibold,
             color: .Brand.white
         )
+        .multilineTextAlignment(.center)
     }
     
     private var header: some View {
