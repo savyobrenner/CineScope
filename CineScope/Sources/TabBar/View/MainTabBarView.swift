@@ -9,78 +9,64 @@ import SwiftUI
 import Factory
 
 struct MainTabBarView: View {
-    
     @EnvironmentObject var router: Router
-    
-    @State var selectedTab = 0
-    
-    var body: some View {
-        
-        ZStack(alignment: .bottom) {
-            TabView(selection: $selectedTab) {
-                HomeView(
-                    viewModel: HomeViewModel(
-                        homeServices: Container.shared.homeServices.resolve(),
-                        router: router,
-                        serviceLocator: Container.shared.serviceLocator.resolve()
-                    )
-                )
-                .tag(0)
-                
-                SearchView()
-                    .tag(1)
-                
-                DownloadsView()
-                    .tag(2)
-            }
-            
-            ZStack {
-                HStack {
-                    ForEach((TabItems.allCases), id: \.self) { item in
-                        Button {
-                            selectedTab = item.rawValue
-                        } label: {
-                            customTabItem(
-                                imageName: item.iconName,
-                                title: item.title,
-                                isActive: (selectedTab == item.rawValue)
-                            )
-                        }
-                    }
-                }
-                .padding(6)
-            }
-            .frame(height: 70)
-            .frame(maxWidth: .infinity)
-            .background(.purple.opacity(0.2))
-            .cornerRadius(35)
-            .padding(.horizontal, 26)
+    @State private var selectedTab: TabItems = .home
+
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = UIColor.black
+
+        let normalAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.gray]
+        appearance.stackedLayoutAppearance.normal.iconColor = .gray
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = normalAttributes
+
+        let selectedAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white]
+        appearance.stackedLayoutAppearance.selected.iconColor = .white
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = selectedAttributes
+
+        UITabBar.appearance().standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = appearance
         }
     }
-}
 
-private extension MainTabBarView {
-    
-    func customTabItem(imageName: String, title: String, isActive: Bool) -> some View {
-        HStack(spacing: 10) {
-            Spacer()
-            
-            Image(imageName)
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(isActive ? .Brand.white : .gray)
-                .frame(width: 20, height: 20)
-            
-            if isActive {
-                Text(title)
-                    .font(.brand(.semibold, size: 14))
-                    .foregroundColor(isActive ? .Brand.white : .gray)
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            HomeView(
+                viewModel: HomeViewModel(
+                    homeServices: Container.shared.homeServices.resolve(),
+                    router: router,
+                    serviceLocator: Container.shared.serviceLocator.resolve()
+                )
+            )
+            .tag(TabItems.home)
+            .tabItem {
+                tabItemContent(for: .home)
             }
             
-            Spacer()
+            SearchView()
+                .tag(TabItems.search)
+                .tabItem {
+                    tabItemContent(for: .search)
+                }
+            
+            DownloadsView()
+                .tag(TabItems.downloads)
+                .tabItem {
+                    tabItemContent(for: .downloads)
+                }
         }
-        .frame(width: isActive ? 160 : 60, height: 40)
-        .background(isActive ? Color.Brand.primary : .clear)
-        .cornerRadius(30)
+    }
+
+    private func tabItemContent(for tab: TabItems) -> some View {
+        VStack {
+            Image(tab.iconName)
+                .renderingMode(.template)
+                .foregroundColor(selectedTab == tab ? .white : .gray)
+            Text(tab.title)
+                .font(.brand(.semibold, size: 12))
+                .foregroundColor(selectedTab == tab ? .white : .gray)
+        }
     }
 }
