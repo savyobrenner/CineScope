@@ -255,6 +255,9 @@
         }
       }
     },
+    "Popular Movies" : {
+      "extractionState" : "manual"
+    },
     "Something went wrong, try again" : {
       "extractionState" : "manual"
     }

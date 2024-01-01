@@ -12,186 +12,218 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     
     var body: some View {
         ZStack {
-            Image("home_background_gradient")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing: 0) {
-                if let posterPath = viewModel.movies.first?.posterPathURL {
-                    CSImageView(url: posterPath)
-                        .scaledToFill()
-                        .frame(height: 390)
-                        .overlay(
-                            LinearGradient(gradient: Gradient(
-                                colors: [
-                                    Color.Brand.firstGradient.opacity(1),
-                                    Color.Brand.secondGradient.opacity(0.5),
-                                    Color.Brand.thirdGradient.opacity(1)
-                                ]), startPoint: .bottomLeading, endPoint: .bottomTrailing
-                            )
-                            .frame(height: 390)
-                        )
-                        .clipped()
-                        .ignoresSafeArea()
-                    
-                    Spacer()
-                } else {
-                    //TODO: - remove
-                    Image("preview_home_main_image")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 390)
-                        .overlay(
-                            LinearGradient(gradient: Gradient(
-                                colors: [
-                                    Color.Brand.firstGradient.opacity(1),
-                                    Color.Brand.secondGradient.opacity(0.5),
-                                    Color.Brand.thirdGradient.opacity(1)
-                                ]), startPoint: .bottomLeading, endPoint: .bottomTrailing
-                            )
-                            .frame(height: 390)
-                        )
-                        .clipped()
-                        .ignoresSafeArea()
-                    
-                    Spacer()
-                }
+            backgroundImage
+            contentStack
+            overlayContent
+            loadingView
+        }
+        .onAppear(perform: viewModel.fetchPopularMovies)
+        .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
+    }
+    
+    private var backgroundImage: some View {
+        Image("home_background_gradient")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
+    private var contentStack: some View {
+        VStack(spacing: 0) {
+            mainImageSection
+            sectionsListView
+            Spacer()
+        }
+    }
+
+    private var mainImageSection: some View {
+        Group {
+            if let posterPath = viewModel.movies.first?.posterPathURL {
+                mainImage(url: posterPath)
             }
-            .overlay(
-                VStack(alignment: .center, spacing: 40) {
-                    CSText(
-                        text: "Zack Snyder’s Justice League",
-                        size: 18,
-                        type: .semibold,
-                        color: .Brand.white
-                    )
-                    
-                    HStack(alignment: .center) {
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }, label: {
-                            VStack(alignment: .center, spacing: 10) {
-                                Image("info_icon")
-                                    .resizable()
-                                    .frame(width: 25, height: 25)
-                                
-                                CSText(
-                                    text: "Info",
-                                    size: 10,
-                                    type: .medium,
-                                    color: .Brand.white
-                                )
-                            }
-                        })
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }, label: {
-                            VStack(alignment: .center, spacing: 10) {
-                                Image("play_icon")
-                                    .resizable()
-                                    .frame(width: 38, height: 38)
-                                
-                                CSText(
-                                    text: "Play",
-                                    size: 10,
-                                    type: .medium,
-                                    color: .Brand.white
-                                )
-                            }
-                        })
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }, label: {
-                            VStack(alignment: .center, spacing: 10) {
-                                Image("plus_icon")
-                                    .resizable()
-                                    .frame(width: 25, height: 25)
-                                
-                                CSText(
-                                    text: "Add",
-                                    size: 10,
-                                    type: .medium,
-                                    color: .Brand.white
-                                )
-                            }
-                        })
-                        
-                        Spacer()
+        }
+    }
+
+    private var sectionsListView: some View {
+        ForEach(viewModel.sections, id: \.title) { section in
+            VStack(alignment: .leading, spacing: 0) {
+                Text(section.title)
+                    .foregroundColor(.Brand.white)
+                    .font(.brand(.bold, size: 16))
+                    .padding()
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(section.items, id: \.title) { item in
+                            itemCard(for: item)
+                        }
                     }
                 }
-                    .padding(.top, -250)
-            )
+                .frame(height: section.horizontal ? 170 : 240)
+            }
+        }
+    }
+    
+    private func itemCard(for item: Movie, isHorizontal: Bool = false) -> some View {
+        VStack(alignment: .center, spacing: 10) {
+            if let posterPathURL = item.backdropPathURL {
+                CSImageView(url: posterPathURL)
+                    .scaledToFill()
+                    .frame(width: isHorizontal ? 180 : 125, height: isHorizontal ? 110 : 185)
+                    .clipped()
+                    .cornerRadius(10)
+                    .shadow(radius: 10)
+            }
+            
+            Text(item.title ?? "")
+                .font(.brand(.semibold, size: 14))
+                .foregroundColor(.Brand.white)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.6)
+                .frame(height: 40)
+        }
+        .frame(width: isHorizontal ? 180 : 125)
+        .padding(.horizontal, 16)
+    }
+    
+    private var overlayContent: some View {
+        ZStack {
+            contentInfoOverlay
             
             VStack {
                 header
                     .padding(.top, 80)
-                
                 Spacer()
             }
-
+        }
+    }
+    
+    private var loadingView: some View {
+        Group {
             if viewModel.isLoading {
                 CSLoadingView()
             }
         }
-        .toast(
-            message: $viewModel.toastMessage,
-            type: viewModel.toastMessage?.type ?? .info
-        )
-        .onAppear(perform: {
-            viewModel.fetchPopularMovies()
-        })
     }
     
-    var header: some View {
+    private func mainImage(url: URL) -> some View {
+        CSImageView(url: url)
+            .scaledToFill()
+            .frame(height: 390)
+            .overlay(mainImageGradient)
+            .clipped()
+            .ignoresSafeArea()
+    }
+    
+    private var mainImageGradient: some View {
+        LinearGradient(gradient: Gradient(
+            colors: [
+                Color.Brand.firstGradient.opacity(1),
+                Color.Brand.secondGradient.opacity(0.5),
+                Color.Brand.thirdGradient.opacity(1)
+            ]),
+            startPoint: .bottomLeading, endPoint: .bottomTrailing
+        )
+        .frame(height: 390)
+    }
+    
+    private var contentInfoOverlay: some View {
+        VStack(alignment: .center, spacing: 40) {
+            contentTitle
+            contentOptions
+        }
+        .padding(.top, -250)
+    }
+    
+    private var contentTitle: some View {
+        CSText(
+            text: viewModel.movies.first?.title ?? "",
+            size: 18,
+            type: .semibold,
+            color: .Brand.white
+        )
+    }
+    
+    private var header: some View {
         HStack {
-            CSText(
-                text: "Home",
-                size: 19,
-                type: .semibold,
-                color: .Brand.white
-            )
-            
+            homeTitle
             Spacer()
-            
-            HStack(spacing: 30) {
-                
-                Button(action: {
-                    
-                }, label: {
-                    Image("search_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                })
-                
-                if let photo = viewModel.user?.photoURL {
-                    CSImageView(url: photo)
-                        .foregroundColor(.Brand.secondary)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(20, corners: .allCorners)
-                } else {
-                    Image(systemName: "person")
-                        .foregroundColor(.Brand.white)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                        .background(
-                            Color.Brand.placeholder
-                                .cornerRadius(20, corners: .allCorners)
-                                .frame(width: 40, height: 40)
-                        )
-                }
-            }
+            headerControls
         }
         .padding(.horizontal, 30)
+    }
+    
+    private var homeTitle: some View {
+        CSText(
+            text: "Home",
+            size: 19,
+            type: .semibold,
+            color: .Brand.white
+        )
+    }
+    
+    private var headerControls: some View {
+        HStack(spacing: 30) {
+            searchButton
+            userProfile
+        }
+    }
+    
+    private var searchButton: some View {
+        Button(action: {}) {
+            Image("search_icon")
+                .resizable()
+                .frame(width: 20, height: 20)
+        }
+    }
+    
+    private var userProfile: some View {
+        Group {
+            if let photo = viewModel.user?.photoURL {
+                CSImageView(url: photo)
+                    .foregroundColor(.Brand.secondary)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 40, height: 40)
+                    .cornerRadius(20)
+            } else {
+                Image(systemName: "person")
+                    .foregroundColor(.Brand.white)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
+                    .background(Color.Brand.placeholder)
+                    .cornerRadius(20)
+            }
+        }
+    }
+        
+    private var contentOptions: some View {
+        HStack(alignment: .center) {
+            Spacer()
+            buttonView(imageName: "info_icon", text: "Info")
+            Spacer()
+            buttonView(imageName: "play_icon", text: "Play", frameSize: 38)
+            Spacer()
+            buttonView(imageName: "plus_icon", text: "Add")
+            Spacer()
+        }
+    }
+    
+    private func buttonView(imageName: String, text: String, frameSize: CGFloat = 25) -> some View {
+        Button(action: {}) {
+            VStack(alignment: .center, spacing: 10) {
+                Image(imageName)
+                    .resizable()
+                    .frame(width: frameSize, height: frameSize)
+                
+                CSText(
+                    text: text,
+                    size: 10,
+                    type: .medium,
+                    color: .Brand.white
+                )
+            }
+        }
     }
 }
 

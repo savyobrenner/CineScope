@@ -10,4 +10,5 @@ import Foundation
 struct SectionModel {
     let title: String
     let items: [Movie]
+    let horizontal: Bool
 }

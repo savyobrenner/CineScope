@@ -20,7 +20,7 @@ final class HomeViewModel: HomeViewModelProtocol {
         serviceLocator.userSettings.user
     }
     
-    var sections: [SectionModel] = []
+    @Published var sections: [SectionModel] = []
 
     init(
         homeServices: HomeServicesProtocol,
@@ -40,8 +40,10 @@ final class HomeViewModel: HomeViewModelProtocol {
             case .success(let success):
                 if let movies = success.results {
                     self?.movies = movies
+                    self?.sections = [.init(title: "Popular Movies".localized, items: movies, horizontal: true)]
                     return
                 }
+                
                 self?.toastMessage = .init(message: "Something went wrong, try again".localized, type: .error)
             case .failure(let error):
                 self?.toastMessage = .init(message: error.localizedDescription, type: .error)

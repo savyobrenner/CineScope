@@ -38,4 +38,8 @@ struct Movie: Codable {
     var posterPathURL: URL? {
         return URL(string: AppEnvironment.imagesBaseURL + (posterPath ?? ""))
     }
+    
+    var backdropPathURL: URL? {
+        return URL(string: AppEnvironment.imagesBaseURL + (backdropPath ?? ""))
+    }
 }
