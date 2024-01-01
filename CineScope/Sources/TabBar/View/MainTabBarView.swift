@@ -19,7 +19,11 @@ struct MainTabBarView: View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 HomeView(
-                    viewModel: HomeViewModel(homeServices: Container.shared.homeServices.resolve(), router: router)
+                    viewModel: HomeViewModel(
+                        homeServices: Container.shared.homeServices.resolve(),
+                        router: router,
+                        serviceLocator: Container.shared.serviceLocator.resolve()
+                    )
                 )
                 .tag(0)
                 

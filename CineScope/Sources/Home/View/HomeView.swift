@@ -13,11 +13,14 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
+                header
                 
-            }.overlay {
+                Spacer()
+            }
+            .background(
                 Image("home_background_gradient")
                     .aspectRatio(contentMode: .fill)
-            }
+            )
             
             if viewModel.isLoading {
                 CSLoadingView()
@@ -31,6 +34,50 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             viewModel.fetchPopularMovies()
         })
     }
+    
+    var header: some View {
+        HStack {
+            CSText(
+                text: "Home",
+                size: 19,
+                type: .semibold,
+                color: .Brand.white
+            )
+            
+            Spacer()
+            
+            HStack(spacing: 30) {
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image("search_icon")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                })
+                
+                if let photo = viewModel.user?.photoURL?.absoluteString {
+                    Image(photo)
+                        .resizable()
+                        .foregroundColor(.Brand.secondary)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(20, corners: .allCorners)
+                } else {
+                    Image(systemName: "person")
+                        .foregroundColor(.Brand.white)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                        .background(
+                            Color.Brand.placeholder
+                                .cornerRadius(20, corners: .allCorners)
+                                .frame(width: 40, height: 40)
+                        )
+                }
+            }
+        }
+        .padding(.horizontal, 30)
+    }
 }
 
 import Factory
@@ -38,7 +85,8 @@ import Factory
     HomeView(
         viewModel: HomeViewModel(
             homeServices: Container.shared.homeServices.resolve(),
-            router: Router()
+            router: Router(),
+            serviceLocator: Container.shared.serviceLocator.resolve()
         )
     )
 }

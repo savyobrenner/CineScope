@@ -11,5 +11,6 @@ protocol HomeViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var toastMessage: CSToastMessage? { get set }
     var movies: [Movie] { get }
+    var user: User? { get }
     func fetchPopularMovies()
 }

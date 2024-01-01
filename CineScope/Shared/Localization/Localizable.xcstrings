@@ -254,6 +254,9 @@
           }
         }
       }
+    },
+    "Something went wrong, try again" : {
+      "extractionState" : "manual"
     }
   },
   "version" : "1.0"
