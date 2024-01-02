@@ -81,19 +81,19 @@ private extension HomeViewModel {
             popularMovies = contents
             selectedContent = contents.first
             let section = SectionModel(title: "Popular Movies".localized, items: contents, isHorizontal: true)
-            addOrUpdateSection(section, for: category)
+            addOrUpdateSection(section, for: category, in: 0)
         case .topRatedMovies:
             topRatedMovies = contents
             let section = SectionModel(title: "Top Rated Movies".localized, items: contents, isHorizontal: false)
-            addOrUpdateSection(section, for: category)
+            addOrUpdateSection(section, for: category, in: 1)
         case .popularTVShows:
             popularTVShows = contents
             let section = SectionModel(title: "Popular TV Shows".localized, items: contents, isHorizontal: false)
-            addOrUpdateSection(section, for: category)
+            addOrUpdateSection(section, for: category, in: 2)
         case .topRatedTVShows:
             topRatedTVShows = contents
             let section = SectionModel(title: "Top Rated TV Shows".localized, items: contents, isHorizontal: false)
-            addOrUpdateSection(section, for: category)
+            addOrUpdateSection(section, for: category, in: 3)
         }
     }
     
@@ -125,11 +125,13 @@ private extension HomeViewModel {
         }
     }
     
-    func addOrUpdateSection(_ section: SectionModel, for category: MediaCategory) {
-        if let index = sections.firstIndex(where: { $0.title == section.title }) {
-            sections[index] = section
-        } else {
-            sections.append(section)
+    func addOrUpdateSection(_ section: SectionModel, for category: MediaCategory, in index: Int) {
+        DispatchQueue.main.async {
+            if let sectionIndex = self.sections.firstIndex(where: { $0.title == section.title }) {
+                self.sections[sectionIndex] = section
+            } else {
+                self.sections.insert(section, at: index)
+            }
         }
     }
 }
