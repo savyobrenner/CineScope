@@ -59,6 +59,10 @@ final class HomeViewModel: HomeViewModelProtocol {
     func selectContentPreview(for media: MediaModel?) {
         self.selectedContent = media
     }
+    
+    func profilePictureWasPressed() {
+        router.navigate(to: .userSettings)
+    }
 }
 
 private extension HomeViewModel {
@@ -130,7 +134,11 @@ private extension HomeViewModel {
             if let sectionIndex = self.sections.firstIndex(where: { $0.title == section.title }) {
                 self.sections[sectionIndex] = section
             } else {
-                self.sections.insert(section, at: index)
+                if self.sections.indices.contains(index) {
+                    self.sections.insert(section, at: index)
+                } else {
+                    self.sections.append(section)
+                }
             }
         }
     }

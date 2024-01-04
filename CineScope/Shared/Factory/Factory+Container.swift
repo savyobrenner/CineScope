@@ -30,6 +30,10 @@ extension Container {
         self { UserSettings() }
     }
     
+    var userServices: Factory<UserServicesProtocol> {
+        self { FirebaseManager() }
+    }
+    
     var authenticationServices: Factory<AuthenticationProtocol> {
         self { FirebaseManager() }
     }

@@ -19,4 +19,5 @@ protocol HomeViewModelProtocol: ObservableObject {
     var selectedContent: MediaModel? { get set }
     func fetchData()
     func selectContentPreview(for media: MediaModel?)
+    func profilePictureWasPressed()
 }

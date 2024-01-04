@@ -12,6 +12,7 @@ class Router: ObservableObject {
         case login
         case registration
         case tabBar
+        case userSettings
     }
     
     @Published var navigationPath = NavigationPath()

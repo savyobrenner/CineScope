@@ -32,7 +32,8 @@ extension View {
                             }
                         }
                 }
-            },
+            }
+                .padding(),
             alignment: .top
         )
     }

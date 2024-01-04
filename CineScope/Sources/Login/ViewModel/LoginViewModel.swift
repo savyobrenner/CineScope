@@ -53,7 +53,7 @@ final class LoginViewModel: LoginViewModelProtocol {
         }
     }
     
-    func navigateToRegistration() {
+    func registrationButtonWasPressed() {
         router.navigate(to: .registration)
     }
     

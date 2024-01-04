@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct RegistrationView<ViewModel: RegistrationViewModelProtocol>: View {
-    
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {

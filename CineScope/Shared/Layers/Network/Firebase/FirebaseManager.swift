@@ -5,9 +5,11 @@
 //  Created by Savyo Brenner on 31/12/23.
 //
 
+import Firebase
 import FirebaseAuth
+import FirebaseStorage
 
-final class FirebaseManager: AuthenticationProtocol {
+final class FirebaseManager: AuthenticationProtocol, UserServicesProtocol {
     
     func login(with email: String, and password: String, _ onResponse: @escaping (Result<User, CSError>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -59,4 +61,47 @@ final class FirebaseManager: AuthenticationProtocol {
             }
         }
     }
+    
+    func uploadProfileImage(_ image: UIImage, _ onResponse: @escaping (Result<User, CSError>) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = FirebaseStorage.Storage.storage().reference().child("user/\(uid)/profile.jpg")
+
+        guard let imageData = image.jpegData(compressionQuality: 0.4) else { return }
+
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if let error = error {
+                onResponse(.failure(.init(message: .init(detail: error.localizedDescription))))
+                return
+            }
+
+            storageRef.downloadURL { url, error in
+                guard let url = url else {
+                    onResponse(.failure(.init(message: .init(detail: error?.localizedDescription ?? ""))))
+                    return
+                }
+
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.photoURL = url
+                changeRequest?.commitChanges { error in
+                    if let error = error {
+                        onResponse(.failure(.init(message: .init(detail: error.localizedDescription))))
+                    } else {
+                        let firebaseUser = Auth.auth().currentUser
+                        let user = User(
+                            uid: firebaseUser?.uid,
+                            name: firebaseUser?.displayName,
+                            email: firebaseUser?.email,
+                            photoURL: firebaseUser?.photoURL
+                        )
+                        
+                        onResponse(.success(user))
+                    }
+                }
+            }
+        }
+    }
+
 }

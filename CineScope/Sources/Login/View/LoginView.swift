@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView<ViewModel: LoginViewModelProtocol>: View {
-    
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {
@@ -64,7 +63,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                     )
                     
                     Button(action: {
-                        viewModel.navigateToRegistration()
+                        viewModel.registrationButtonWasPressed()
                     }, label: {
                         CSText(
                             text: "Create a new one".localized,

@@ -12,7 +12,7 @@ protocol LoginViewModelProtocol: ObservableObject {
     var password: String { get set }
     var isLoading: Bool { get set }
     var toastMessage: CSToastMessage? { get set }
-    func navigateToRegistration()
+    func registrationButtonWasPressed()
     func navigateToHome()
     func login()
 }

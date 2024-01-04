@@ -44,6 +44,14 @@ struct CineScopeApp: App {
                     case .tabBar:
                         MainTabBarView()
                             .navigationBarBackButtonHidden(true)
+                    case .userSettings:
+                        UserProfileView(
+                            viewModel: UserProfileViewModel(
+                                userServices: Container.shared.userServices.resolve(),
+                                router: router,
+                                serviceLocator: Container.shared.serviceLocator.resolve()
+                            )
+                        )
                     }
                 }
             }

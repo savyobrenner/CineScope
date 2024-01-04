@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView<ViewModel: HomeViewModelProtocol>: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {
@@ -220,6 +220,9 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     .cornerRadius(20)
             }
         }
+        .onTapGesture {
+            viewModel.profilePictureWasPressed()
+        }
     }
     
     private var contentOptions: some View {
@@ -252,7 +255,6 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
         }
     }
 }
-
 
 import Factory
 #Preview {

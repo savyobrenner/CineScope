@@ -119,6 +119,9 @@
         }
       }
     },
+    "Failed to log out, please try again" : {
+      "extractionState" : "manual"
+    },
     "Forgot password ?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -339,6 +342,9 @@
           }
         }
       }
+    },
+    "Profile picture updated!" : {
+      "extractionState" : "manual"
     },
     "Something went wrong, try again" : {
       "extractionState" : "manual",
