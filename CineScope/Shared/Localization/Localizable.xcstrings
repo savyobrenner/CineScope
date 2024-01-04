@@ -190,6 +190,9 @@
         }
       }
     },
+    "Less" : {
+      "extractionState" : "manual"
+    },
     "Loading..." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -206,6 +209,9 @@
           }
         }
       }
+    },
+    "More" : {
+      "extractionState" : "manual"
     },
     "Name" : {
       "extractionState" : "manual",

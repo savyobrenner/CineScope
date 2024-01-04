@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81E21F42B476F3000D49215 /* CSRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E21F32B476F3000D49215 /* CSRatingView.swift */; };
+		F81E21F72B47732C00D49215 /* CSExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E21F62B47732C00D49215 /* CSExpandableText.swift */; };
 		F853DC552B4350C200958EA3 /* CSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DC542B4350C200958EA3 /* CSImageView.swift */; };
 		F853DC5A2B43540700958EA3 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F853DC592B43540700958EA3 /* SectionModel.swift */; };
 		F860193D2B4613B700A6C114 /* UserProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860193C2B4613B700A6C114 /* UserProfileViewModelProtocol.swift */; };
@@ -117,6 +119,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F81E21F32B476F3000D49215 /* CSRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSRatingView.swift; sourceTree = "<group>"; };
+		F81E21F62B47732C00D49215 /* CSExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSExpandableText.swift; sourceTree = "<group>"; };
 		F853DC542B4350C200958EA3 /* CSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSImageView.swift; sourceTree = "<group>"; };
 		F853DC592B43540700958EA3 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		F860193C2B4613B700A6C114 /* UserProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -238,6 +242,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F81E21F22B476F2500D49215 /* StarRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				F81E21F32B476F3000D49215 /* CSRatingView.swift */,
+			);
+			path = StarRatingView;
+			sourceTree = "<group>";
+		};
+		F81E21F52B47732000D49215 /* ExpandableText */ = {
+			isa = PBXGroup;
+			children = (
+				F81E21F62B47732C00D49215 /* CSExpandableText.swift */,
+			);
+			path = ExpandableText;
+			sourceTree = "<group>";
+		};
 		F853DC562B4353A900958EA3 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +804,8 @@
 		F8DF47942B40AF9800F52351 /* DS */ = {
 			isa = PBXGroup;
 			children = (
+				F81E21F52B47732000D49215 /* ExpandableText */,
+				F81E21F22B476F2500D49215 /* StarRatingView */,
 				F86019462B46ACAF00A6C114 /* ImagePicker */,
 				F853DC562B4353A900958EA3 /* ImageView */,
 				F86E86972B41756C005315D8 /* Toast */,
@@ -1100,10 +1122,12 @@
 				F8DF47DB2B40AF9800F52351 /* UserSettings.swift in Sources */,
 				F86E86962B417409005315D8 /* CacheManagerProtocol.swift in Sources */,
 				F8DF47C02B40AF9800F52351 /* Reachability.swift in Sources */,
+				F81E21F72B47732C00D49215 /* CSExpandableText.swift in Sources */,
 				F86E869F2B4181FF005315D8 /* CSToastMessage.swift in Sources */,
 				F8DF47C22B40AF9800F52351 /* EmptyResponse.swift in Sources */,
 				F86EAE092B40E0E1006E6DB1 /* TabItems.swift in Sources */,
 				F8DF47C72B40AF9800F52351 /* CSBaseButton.swift in Sources */,
+				F81E21F42B476F3000D49215 /* CSRatingView.swift in Sources */,
 				F8DF47C12B40AF9800F52351 /* ReachabilityProtocol.swift in Sources */,
 				F8CB82362B41D31800536878 /* Languages.swift in Sources */,
 				F8DF47CB2B40AF9800F52351 /* ServiceLocator.swift in Sources */,
