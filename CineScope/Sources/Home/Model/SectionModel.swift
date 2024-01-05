@@ -11,4 +11,5 @@ struct SectionModel {
     let title: String
     let items: [MediaModel]
     let isHorizontal: Bool
+    let isMovie: Bool
 }

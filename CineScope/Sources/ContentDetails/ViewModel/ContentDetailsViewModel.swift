@@ -149,7 +149,11 @@ private extension ContentDetailsViewModel {
     
     func createRelatedContentSection(with list: ListOfItems) {
         if let contents = list.results {
-            let section = SectionModel(title: "More Like This".localized, items: contents, isHorizontal: true)
+            let section = SectionModel(
+                title: "More Like This".localized,
+                items: contents,
+                isHorizontal: true,
+                isMovie: isMovie)
             sections.append(section)
         } else {
             toastMessage = .init(message: "Something went wrong, try again".localized, type: .error)

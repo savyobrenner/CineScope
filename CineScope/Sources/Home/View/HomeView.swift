@@ -74,7 +74,7 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         ForEach(section.items, id: \.uuid) { item in
-                            itemCard(for: item, isHorizontal: section.isHorizontal)
+                            itemCard(for: item, isHorizontal: section.isHorizontal, isMovie: section.isMovie)
                         }
                     }
                 }
@@ -83,11 +83,14 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
         }
     }
     
-    private func itemCard(for item: MediaModel, isHorizontal: Bool) -> some View {
+    private func itemCard(for item: MediaModel, isHorizontal: Bool, isMovie: Bool) -> some View {
         Button(action: {
             if isHorizontal {
                 viewModel.selectContentPreview(for: item)
+                return
             }
+            
+            viewModel.goToContentDetails(id: "\(item.id ?? 0)", isMovie: isMovie)
         }) {
             VStack(alignment: .center, spacing: 10) {
                 if let pathURL = isHorizontal ? item.backdropPathURL : item.posterPathURL {
@@ -244,7 +247,9 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     }
     
     private func buttonView(imageName: String, text: String, frameSize: CGFloat = 25) -> some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.goToContentDetails(id: "\(viewModel.selectedContent?.id ?? 0)", isMovie: true)
+        }) {
             VStack(alignment: .center, spacing: 10) {
                 Image(imageName)
                     .resizable()

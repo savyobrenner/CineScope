@@ -63,6 +63,10 @@ final class HomeViewModel: HomeViewModelProtocol {
     func profilePictureWasPressed() {
         router.navigate(to: .userSettings)
     }
+    
+    func goToContentDetails(id: String, isMovie: Bool) {
+        router.navigate(to: .contentDetails(id: id, isMovie: isMovie))
+    }
 }
 
 private extension HomeViewModel {
@@ -84,19 +88,42 @@ private extension HomeViewModel {
         case .popularMovies:
             popularMovies = contents
             selectedContent = contents.first
-            let section = SectionModel(title: "Popular Movies".localized, items: contents, isHorizontal: true)
+            let section = SectionModel(
+                title: "Popular Movies".localized,
+                items: contents,
+                isHorizontal: true,
+                isMovie: true
+            )
+            
             addOrUpdateSection(section, for: category, in: 0)
         case .topRatedMovies:
             topRatedMovies = contents
-            let section = SectionModel(title: "Top Rated Movies".localized, items: contents, isHorizontal: false)
+            let section = SectionModel(
+                title: "Top Rated Movies".localized,
+                items: contents, isHorizontal: false,
+                isMovie: true
+            )
+            
             addOrUpdateSection(section, for: category, in: 1)
         case .popularTVShows:
             popularTVShows = contents
-            let section = SectionModel(title: "Popular TV Shows".localized, items: contents, isHorizontal: false)
+            let section = SectionModel(
+                title: "Popular TV Shows".localized,
+                items: contents,
+                isHorizontal: false,
+                isMovie: false
+                
+            )
             addOrUpdateSection(section, for: category, in: 2)
         case .topRatedTVShows:
             topRatedTVShows = contents
-            let section = SectionModel(title: "Top Rated TV Shows".localized, items: contents, isHorizontal: false)
+            let section = SectionModel(
+                title: "Top Rated TV Shows".localized,
+                items: contents,
+                isHorizontal: false,
+                isMovie: false
+            )
+            
             addOrUpdateSection(section, for: category, in: 3)
         }
     }

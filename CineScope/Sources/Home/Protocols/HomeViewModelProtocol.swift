@@ -20,4 +20,5 @@ protocol HomeViewModelProtocol: ObservableObject {
     func fetchData()
     func selectContentPreview(for media: MediaModel?)
     func profilePictureWasPressed()
+    func goToContentDetails(id: String, isMovie: Bool)
 }
