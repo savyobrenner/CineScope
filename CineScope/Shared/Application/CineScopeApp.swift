@@ -52,6 +52,15 @@ struct CineScopeApp: App {
                                 serviceLocator: Container.shared.serviceLocator.resolve()
                             )
                         )
+                    case let .contentDetails(id, isMovie):
+                        ContentDetailsView(
+                            viewModel: ContentDetailsViewModel(
+                                router: router,
+                                contentDetailsServices: Container.shared.contentDetailsServices.resolve(),
+                                contentId: id,
+                                isMovie: isMovie
+                            )
+                        )
                     }
                 }
             }

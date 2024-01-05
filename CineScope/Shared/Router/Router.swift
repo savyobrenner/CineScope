@@ -13,6 +13,7 @@ class Router: ObservableObject {
         case registration
         case tabBar
         case userSettings
+        case contentDetails(id: String, isMovie: Bool)
     }
     
     @Published var navigationPath = NavigationPath()
