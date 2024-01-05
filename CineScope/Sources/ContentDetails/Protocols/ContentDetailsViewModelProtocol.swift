@@ -10,7 +10,11 @@ import Foundation
 protocol ContentDetailsViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var toastMessage: CSToastMessage? { get set }
+    var contentDetails: MediaModel? { get }
     var relatedContent: [MediaModel] { get }
     var sections: [SectionModel] { get set }
+    var runtime: String { get }
+    var releaseDate: String { get }
+    var genresString: String { get }
     func fetchData()
 }

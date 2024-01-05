@@ -51,7 +51,7 @@ struct MainTabBarView: View {
                     tabItemContent(for: .search)
                 }
             
-            DownloadsView()
+            FavoritesView()
                 .tag(TabItems.downloads)
                 .tabItem {
                     tabItemContent(for: .downloads)

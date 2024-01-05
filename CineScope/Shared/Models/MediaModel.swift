@@ -13,7 +13,9 @@ struct MediaModel: Codable, Identifiable, Equatable {
     let name: String?
     let backdropPath: String?
     let genreIDS: [Int]?
+    let genres: [Genre]?
     let id: Int?
+    let runtime: Int?
     let originalLanguage: String?
     let originalTitle, overview: String?
     let popularity: Double?
@@ -27,7 +29,9 @@ struct MediaModel: Codable, Identifiable, Equatable {
         case name
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"
+        case genres
         case id
+        case runtime
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
@@ -45,4 +49,11 @@ struct MediaModel: Codable, Identifiable, Equatable {
     var backdropPathURL: URL? {
         return URL(string: AppEnvironment.imagesBaseURL + (backdropPath ?? ""))
     }
+}
+
+
+// MARK: - Genre
+struct Genre: Codable, Equatable {
+    let id: Int?
+    let name: String?
 }

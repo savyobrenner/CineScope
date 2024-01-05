@@ -15,13 +15,15 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
             backgroundImage
                 .ignoresSafeArea()
             
-            Image("preview_content_details_backdrop")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .overlay(
-                    LinearGradient(gradient: Gradient(colors: [.clear, .Brand.firstGradient]), startPoint: .top, endPoint: .bottom)
-                )
-                .padding(.top, 0)
+            if let backdropPathURL = viewModel.contentDetails?.backdropPathURL {
+                CSImageView(url: backdropPathURL)
+                    .overlay(
+                        LinearGradient(gradient: Gradient(
+                            colors: [.clear, .Brand.firstGradient]), startPoint: .top, endPoint: .bottom
+                        )
+                    )
+                    .padding(.top, 0)
+            }
             
             VStack(alignment: .leading, spacing: 15) {
                 headerView
@@ -29,7 +31,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                 customDivider
                 
                 CSExpandableText(
-                    text: "Thousands of years ago, Darkseid and his legions of Parademons attempt to conquer Earth using the combined energia eada aod lorem ipsum",
+                    text: viewModel.contentDetails?.overview ?? "",
                     lineLimit: 3
                 )
                 .padding(.horizontal, 22)
@@ -46,6 +48,8 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                 .padding(.horizontal, 22)
                 
                 customDivider
+                
+                sectionsListView
             }
             
             loadingView
@@ -73,26 +77,26 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
     private var headerView: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .center, spacing: 20) {
-                Image("preview_home_main_image")
-                    .resizable()
-                    .cornerRadius(10, corners: .allCorners)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 110)
-                    .padding(.top, 100)
-                    .clipped()
-                    .overlay(
-                        LinearGradient(
-                            gradient: Gradient(colors: [.clear, .Brand.firstGradient]),
-                            startPoint: .topLeading, endPoint: .bottomTrailing
-                        )
+                if let posterImageURL = viewModel.contentDetails?.posterPathURL {
+                    CSImageView(url: posterImageURL)
                         .cornerRadius(10, corners: .allCorners)
                         .frame(width: 110)
                         .padding(.top, 100)
-                    )
+                        .clipped()
+                        .overlay(
+                            LinearGradient(
+                                gradient: Gradient(colors: [.clear, .Brand.firstGradient]),
+                                startPoint: .topLeading, endPoint: .bottomTrailing
+                            )
+                            .cornerRadius(10, corners: .allCorners)
+                            .frame(width: 110)
+                            .padding(.top, 100)
+                        )
+                }
                 
                 VStack(alignment: .leading, spacing: 10) {
                     CSText(
-                        text: "Zack Snyder’s Justice League",
+                        text: (viewModel.contentDetails?.title ?? viewModel.contentDetails?.name) ?? "",
                         size: 24,
                         type: .semibold,
                         color: .Brand.white
@@ -100,7 +104,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                     .multilineTextAlignment(.leading)
                     
                     CSText(
-                        text: "2023  | 4h 02m",
+                        text: "\(viewModel.releaseDate) | \(viewModel.runtime)",
                         size: 12,
                         type: .regular,
                         color: .Brand.white
@@ -110,7 +114,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                     CSStarRatingView(rating: 2)
                     
                     CSText(
-                        text: "Drama - Adventure - Romance",
+                        text: viewModel.genresString,
                         size: 12,
                         type: .regular,
                         color: .Brand.white
@@ -193,8 +197,9 @@ import Factory
     ContentDetailsView(
         viewModel: ContentDetailsViewModel(
             router: Router(),
-            contentDetailsServices: Container.shared.contentDetailsServices.resolve()
+            contentDetailsServices: Container.shared.contentDetailsServices.resolve(), 
+            contentId: "242972",
+            isMovie: true
         )
     )
 }
-

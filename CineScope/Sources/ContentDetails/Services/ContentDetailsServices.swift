@@ -14,9 +14,49 @@ class ContentDetailsServices: ContentDetailsServicesProtocol {
         self.network = network
     }
     
-    func fetchContentDetails(for contentId: String, onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
+    func fetchMovieDetails(for contentId: String, onSuccess: @escaping (Result<MediaModel, CSError>) -> Void) {
         network.request(
-            ContentDetailsEndpoint.fetchContentDetails(id: contentId),
+            ContentDetailsEndpoint.fetchMovieDetails(id: contentId),
+            expectedType: MediaModel.self,
+            onSuccess
+        )
+    }
+    
+    func fetchTVShowsDetails(for contentId: String, onSuccess: @escaping (Result<MediaModel, CSError>) -> Void) {
+        network.request(
+            ContentDetailsEndpoint.fetchTVShowDetails(id: contentId),
+            expectedType: MediaModel.self,
+            onSuccess
+        )
+    }
+    
+    func fetchMoviesGenres(onSuccess: @escaping (Result<GenreList, CSError>) -> Void) {
+        network.request(
+            ContentDetailsEndpoint.fetchMoviesGenres,
+            expectedType: GenreList.self,
+            onSuccess
+        )
+    }
+    
+    func fetchTVShowGenres(onSuccess: @escaping (Result<GenreList, CSError>) -> Void) {
+        network.request(
+            ContentDetailsEndpoint.fetchTVShowGenres,
+            expectedType: GenreList.self,
+            onSuccess
+        )
+    }
+    
+    func fetchRelatedMovies(for contentId: String, onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
+        network.request(
+            ContentDetailsEndpoint.fetchRelatedMovies(id: contentId),
+            expectedType: ListOfItems.self,
+            onSuccess
+        )
+    }
+    
+    func fetchRelatedTVShows(for contentId: String, onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
+        network.request(
+            ContentDetailsEndpoint.fetchRelatedTVShows(id: contentId),
             expectedType: ListOfItems.self,
             onSuccess
         )

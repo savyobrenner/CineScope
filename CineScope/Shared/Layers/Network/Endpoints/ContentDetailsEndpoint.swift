@@ -9,7 +9,12 @@ import Moya
 import SwiftUI
 
 enum ContentDetailsEndpoint {
-    case fetchContentDetails(id: String)
+    case fetchMovieDetails(id: String)
+    case fetchTVShowDetails(id: String)
+    case fetchMoviesGenres
+    case fetchTVShowGenres
+    case fetchRelatedMovies(id: String)
+    case fetchRelatedTVShows(id: String)
 }
 
 // MARK: - Endpoint Builder
@@ -24,14 +29,30 @@ extension ContentDetailsEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case let .fetchContentDetails(contentId):
+        case let .fetchMovieDetails(contentId):
             return "movie/\(contentId)"
+        case let .fetchTVShowDetails(contentId):
+            return "tv/\(contentId)"
+        case .fetchMoviesGenres:
+            return "genre/movie/list"
+        case .fetchTVShowGenres:
+            return "genre/tv/list"
+        case let .fetchRelatedMovies(id):
+            return "movie/\(id)/similar"
+        case let .fetchRelatedTVShows(id):
+            return "tv/\(id)/similar"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .fetchContentDetails:
+        case
+                .fetchMovieDetails,
+                .fetchTVShowDetails,
+                .fetchMoviesGenres,
+                .fetchTVShowGenres,
+                .fetchRelatedMovies,
+                .fetchRelatedTVShows:
             return .get
         }
     }
@@ -40,7 +61,13 @@ extension ContentDetailsEndpoint: Endpoint {
         var params = [String: Any]()
         
         switch self {
-        case .fetchContentDetails:
+        case
+                .fetchMovieDetails,
+                .fetchTVShowDetails, 
+                .fetchMoviesGenres,
+                .fetchTVShowGenres,
+                .fetchRelatedMovies,
+                .fetchRelatedTVShows:
             params["language"] = Language.current.rawValue
         }
         
