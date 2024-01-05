@@ -11,6 +11,7 @@ internal struct CSBaseButton: View {
     
     let action: (() -> Void)?
     let title: String
+    let icon: Image?
     let font: Font
     let textColor: Color
     let primaryColor: Color
@@ -19,23 +20,31 @@ internal struct CSBaseButton: View {
     let isLoading: Bool
     
     var body: some View {
-        Button {
+        Button(action: {
             action?()
-        } label: {
+        }) {
             ZStack {
                 primaryColor
+                
                 if isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .progressViewStyle(CircularProgressViewStyle(tint: textColor))
                         .scaleEffect(0.8)
                 } else {
-                    Text(title)
-                        .font(font)
-                        .foregroundColor(textColor)
-                        .padding(padding)
+                    HStack(spacing: 10) {
+                        Text(title)
+                            .font(font)
+                            .foregroundColor(textColor)
+                        
+                        icon?
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .foregroundColor(textColor)
+                    }
+                    .padding(padding)
                 }
             }
-            .cornerRadius(radius, corners: .allCorners)
+            .cornerRadius(radius)
             .frame(maxHeight: 50)
         }
         .disabled(isLoading)

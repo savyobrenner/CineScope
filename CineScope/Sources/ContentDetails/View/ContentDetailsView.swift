@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentDetailsView: View {
+struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
+    @StateObject var viewModel: ViewModel
+    
     var body: some View {
         ZStack(alignment: .top) {
             backgroundImage
@@ -24,22 +26,33 @@ struct ContentDetailsView: View {
             VStack(alignment: .leading, spacing: 15) {
                 headerView
                 
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .background(Color.Brand.white.opacity(0.1))
-                    .padding(.horizontal, 22)
-                    .frame(height: 2)
-                    .cornerRadius(10, corners: .allCorners)
+                customDivider
                 
                 CSExpandableText(
                     text: "Thousands of years ago, Darkseid and his legions of Parademons attempt to conquer Earth using the combined energia eada aod lorem ipsum",
                     lineLimit: 3
                 )
                 .padding(.horizontal, 22)
+                
+                CSButton(title: "Watch Trailer".localized, icon: .init("play_trailer_icon"), style: .secondary) {
+                    
+                }
+                .padding(.horizontal, 22)
+                .padding(.top, 10)
+                
+                CSButton(title: "Add to Favorites".localized, icon: .init(systemName: "heart"), style: .secondary) {
+                    
+                }
+                .padding(.horizontal, 22)
+                
+                customDivider
             }
             
+            loadingView
         }
         .edgesIgnoringSafeArea(.all)
+        .onAppear(perform: viewModel.fetchData)
+        .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
     }
     
     private var backgroundImage: some View {
@@ -51,9 +64,9 @@ struct ContentDetailsView: View {
     
     private var loadingView: some View {
         Group {
-            //            if viewModel.isLoading {
-            //            CSLoadingView()
-            //            }
+            if viewModel.isLoading {
+                CSLoadingView()
+            }
         }
     }
     
@@ -111,9 +124,77 @@ struct ContentDetailsView: View {
             .padding(.leading, 26)
         }
     }
+    
+    private var customDivider: some View {
+        Rectangle()
+            .foregroundColor(.clear)
+            .background(Color.Brand.white.opacity(0.1))
+            .padding(.horizontal, 22)
+            .frame(height: 2)
+            .cornerRadius(10, corners: .allCorners)
+    }
+    
+    private var sectionsListView: some View {
+        ForEach(viewModel.sections, id: \.title) { section in
+            VStack(alignment: .leading, spacing: 0) {
+                CSText(
+                    text: section.title,
+                    size: 16,
+                    type: .bold,
+                    color: .Brand.white
+                )
+                .padding()
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(section.items, id: \.uuid) { item in
+                            itemCard(for: item, isHorizontal: section.isHorizontal)
+                        }
+                    }
+                }
+                .frame(height: section.isHorizontal ? 170 : 240)
+            }
+        }
+    }
+    
+    private func itemCard(for item: MediaModel, isHorizontal: Bool) -> some View {
+        Button(action: {
+            
+        }) {
+            VStack(alignment: .center, spacing: 10) {
+                if let pathURL = isHorizontal ? item.backdropPathURL : item.posterPathURL {
+                    CSImageView(url: pathURL)
+                        .scaledToFill()
+                        .frame(width: isHorizontal ? 180 : 125, height: isHorizontal ? 110 : 185)
+                        .clipped()
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                }
+                
+                CSText(
+                    text: (item.title ?? item.name) ?? "",
+                    size: 14,
+                    type: .semibold,
+                    color: .Brand.white
+                )
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.6)
+                .frame(height: 40)
+            }
+        }
+        .frame(width: isHorizontal ? 180 : 125)
+        .padding(.horizontal, 16)
+    }
 }
 
+import Factory
 #Preview {
-    ContentDetailsView()
+    ContentDetailsView(
+        viewModel: ContentDetailsViewModel(
+            router: Router(),
+            contentDetailsServices: Container.shared.contentDetailsServices.resolve()
+        )
+    )
 }
 

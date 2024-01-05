@@ -12,6 +12,7 @@ struct CSButton: View {
     @State var isEnabled = true
     var isLoading = false
     let title: String
+    var icon: Image? = nil
     let style: CSButtonStyle
     var font: Font = .brand(.medium, size: 18)
     var padding: CGFloat = 10
@@ -22,13 +23,26 @@ struct CSButton: View {
         switch style {
         case .primary:
             CSBaseButton(action: action,
-                           title: title,
-                           font: font,
-                           textColor: .Brand.white,
-                           primaryColor: .Brand.primary,
-                           padding: padding,
-                           radius: radius,
-                           isLoading: isLoading)
+                         title: title,
+                         icon: icon,
+                         font: font,
+                         textColor: .Brand.white,
+                         primaryColor: .Brand.primary,
+                         padding: padding,
+                         radius: radius,
+                         isLoading: isLoading)
+            .disabled(!isEnabled)
+            .opacity(isEnabled ? 1 : 0.5)
+        case .secondary:
+            CSBaseButton(action: action,
+                         title: title,
+                         icon: icon,
+                         font: font,
+                         textColor: .Brand.white,
+                         primaryColor: .Brand.primary.opacity(0.7),
+                         padding: padding,
+                         radius: radius,
+                         isLoading: isLoading)
             .disabled(!isEnabled)
             .opacity(isEnabled ? 1 : 0.5)
         }

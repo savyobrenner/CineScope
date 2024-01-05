@@ -9,5 +9,6 @@ import Foundation
 
 enum CSButtonStyle {
     case primary
+    case secondary
 }
 

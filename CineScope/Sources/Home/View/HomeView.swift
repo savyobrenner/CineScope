@@ -63,10 +63,13 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     private var sectionsListView: some View {
         ForEach(viewModel.sections, id: \.title) { section in
             VStack(alignment: .leading, spacing: 0) {
-                Text(section.title)
-                    .foregroundColor(.Brand.white)
-                    .font(.brand(.bold, size: 16))
-                    .padding()
+                CSText(
+                    text: section.title,
+                    size: 16,
+                    type: .bold,
+                    color: .Brand.white
+                )
+                .padding()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
@@ -96,13 +99,16 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                         .shadow(radius: 10)
                 }
                 
-                Text((item.title ?? item.name) ?? "")
-                    .font(.brand(.semibold, size: 14))
-                    .foregroundColor(.Brand.white)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.6)
-                    .frame(height: 40)
+                CSText(
+                    text: (item.title ?? item.name) ?? "",
+                    size: 14,
+                    type: .semibold,
+                    color: .Brand.white
+                )
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.6)
+                .frame(height: 40)
             }
         }
         .frame(width: isHorizontal ? 180 : 125)

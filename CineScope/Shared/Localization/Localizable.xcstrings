@@ -34,6 +34,9 @@
         }
       }
     },
+    "Add to Favorites" : {
+      "extractionState" : "manual"
+    },
     "Create a new one" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -211,6 +214,9 @@
       }
     },
     "More" : {
+      "extractionState" : "manual"
+    },
+    "More Like This" : {
       "extractionState" : "manual"
     },
     "Name" : {
@@ -402,6 +408,9 @@
           }
         }
       }
+    },
+    "Watch Trailer" : {
+      "extractionState" : "manual"
     }
   },
   "version" : "1.0"

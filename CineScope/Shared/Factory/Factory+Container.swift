@@ -41,4 +41,8 @@ extension Container {
     var homeServices: Factory<HomeServicesProtocol> {
         self { HomeServices(network: self.networkServices.resolve()) }
     }
+    
+    var contentDetailsServices: Factory<ContentDetailsServicesProtocol> {
+        self { ContentDetailsServices(network: self.networkServices.resolve()) }
+    }
 }
