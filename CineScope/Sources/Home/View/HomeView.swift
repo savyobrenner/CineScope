@@ -23,7 +23,9 @@ struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             
             loadingView
         }
-        .onAppear(perform: viewModel.fetchData)
+        .runOnceOnAppear {
+            viewModel.fetchData()
+        }
         .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
     }
     

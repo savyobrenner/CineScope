@@ -53,6 +53,7 @@
 		F86EAE272B40F47B006E6DB1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = F86EAE262B40F47B006E6DB1 /* Factory */; };
 		F86EAE2A2B40F490006E6DB1 /* Factory+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EAE292B40F490006E6DB1 /* Factory+Container.swift */; };
 		F87B159A2B41978400B0B1C0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F87B15992B41978400B0B1C0 /* Localizable.xcstrings */; };
+		F8AF06952B480667008AEDD8 /* RunOnceAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AF06942B480667008AEDD8 /* RunOnceAppear.swift */; };
 		F8CB82362B41D31800536878 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82352B41D31800536878 /* Languages.swift */; };
 		F8CB82382B42E5C700536878 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB82372B42E5C700536878 /* HomeEndpoint.swift */; };
 		F8CB823C2B4301E400536878 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB823B2B4301E400536878 /* MediaModel.swift */; };
@@ -166,6 +167,7 @@
 		F86EAE232B40F2DA006E6DB1 /* CSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLoadingView.swift; sourceTree = "<group>"; };
 		F86EAE292B40F490006E6DB1 /* Factory+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Factory+Container.swift"; sourceTree = "<group>"; };
 		F87B15992B41978400B0B1C0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F8AF06942B480667008AEDD8 /* RunOnceAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunOnceAppear.swift; sourceTree = "<group>"; };
 		F8CB82352B41D31800536878 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		F8CB82372B42E5C700536878 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 		F8CB823B2B4301E400536878 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 				F8DF477F2B40AF9800F52351 /* Constants.swift */,
 				F8DF47802B40AF9800F52351 /* AppEnviroment.swift */,
 				F8CB82352B41D31800536878 /* Languages.swift */,
+				F8AF06942B480667008AEDD8 /* RunOnceAppear.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1174,6 +1177,7 @@
 				F8DF47C32B40AF9800F52351 /* CSError.swift in Sources */,
 				F853DC5A2B43540700958EA3 /* SectionModel.swift in Sources */,
 				F8DF47C62B40AF9800F52351 /* CornerRadiusStyle.swift in Sources */,
+				F8AF06952B480667008AEDD8 /* RunOnceAppear.swift in Sources */,
 				F8CB82512B430F8500536878 /* SplashScreenViewModel.swift in Sources */,
 				F86EAE212B40F0C3006E6DB1 /* RegistrationViewModelProtocol.swift in Sources */,
 				F81E22002B477CF800D49215 /* ContentDetailsServices.swift in Sources */,

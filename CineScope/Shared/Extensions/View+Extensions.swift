@@ -17,7 +17,12 @@ extension View {
                                         to: nil, from: nil, for: nil)
     }
     
-    func toast(message: Binding<CSToastMessage?>, type: CSToastType, duration: TimeInterval = 3) -> some View {
+    func toast(
+        message: Binding<CSToastMessage?>,
+        type: CSToastType,
+        duration: TimeInterval = 3,
+        alignment: Alignment = .top
+    ) -> some View {
         self.overlay(
             Group {
                 if let toastMessage = message.wrappedValue {
@@ -34,7 +39,7 @@ extension View {
                 }
             }
                 .padding(),
-            alignment: .top
+            alignment: alignment
         )
     }
 }

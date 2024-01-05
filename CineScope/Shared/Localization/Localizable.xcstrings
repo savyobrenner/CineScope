@@ -153,6 +153,23 @@
         }
       }
     },
+    "Feature under development" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonctionnalité en cours de développement"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feature em desenvolvimento"
+          }
+        }
+      }
+    },
     "Forgot password ?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -251,6 +268,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carregando..."
+          }
+        }
+      }
+    },
+    "Logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se déconnecter"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sair"
           }
         }
       }

@@ -56,9 +56,11 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                 
                 loadingView
             }
+            .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info, alignment: .bottom)
             .edgesIgnoringSafeArea(.all)
-            .onAppear(perform: viewModel.fetchData)
-            .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
+            .runOnceOnAppear {
+                viewModel.fetchData()
+            }
         }
         .ignoresSafeArea()
         .background(
