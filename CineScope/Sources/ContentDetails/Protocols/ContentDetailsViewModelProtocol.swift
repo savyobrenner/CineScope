@@ -18,4 +18,7 @@ protocol ContentDetailsViewModelProtocol: ObservableObject {
     var genresString: String { get }
     var startRating: Int { get }
     func fetchData()
+    func goToContentDetails(id: String)
+    func watchTrailer()
+    func saveToFavorites()
 }

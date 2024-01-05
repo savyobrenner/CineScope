@@ -39,13 +39,13 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                     .padding(.horizontal, 22)
                     
                     CSButton(title: "Watch Trailer".localized, icon: .init("play_trailer_icon"), style: .secondary) {
-                        
+                        viewModel.watchTrailer()
                     }
                     .padding(.horizontal, 22)
                     .padding(.top, 10)
                     
                     CSButton(title: "Add to Favorites".localized, icon: .init(systemName: "heart"), style: .secondary) {
-                        
+                        viewModel.saveToFavorites()
                     }
                     .padding(.horizontal, 22)
                     
@@ -171,7 +171,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
     
     private func itemCard(for item: MediaModel, isHorizontal: Bool) -> some View {
         Button(action: {
-            
+            viewModel.goToContentDetails(id: "\(item.id ?? 0)")
         }) {
             VStack(alignment: .center, spacing: 10) {
                 if let pathURL = isHorizontal ? item.backdropPathURL : item.posterPathURL {

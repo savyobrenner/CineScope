@@ -66,6 +66,18 @@ final class ContentDetailsViewModel: ContentDetailsViewModelProtocol {
             self.isLoading = false
         }
     }
+    
+    func goToContentDetails(id: String) {
+        router.navigate(to: .contentDetails(id: id, isMovie: isMovie))
+    }
+    
+    func watchTrailer() {
+        toastMessage = .init(message: "Feature under development".localized, type: .info)
+    }
+    
+    func saveToFavorites() {
+        toastMessage = .init(message: "Feature under development".localized, type: .info)
+    }
 }
 
 private extension ContentDetailsViewModel {

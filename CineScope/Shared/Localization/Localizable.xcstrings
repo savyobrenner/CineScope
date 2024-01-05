@@ -35,7 +35,21 @@
       }
     },
     "Add to Favorites" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter aux Favoris"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar aos Favoritos"
+          }
+        }
+      }
     },
     "Create a new one" : {
       "extractionState" : "manual",
@@ -123,7 +137,21 @@
       }
     },
     "Failed to log out, please try again" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échec de la déconnexion, veuillez réessayer"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error ao sair, tente novamente"
+          }
+        }
+      }
     },
     "Forgot password ?" : {
       "extractionState" : "manual",
@@ -194,7 +222,21 @@
       }
     },
     "Less" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moins"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menos"
+          }
+        }
+      }
     },
     "Loading..." : {
       "extractionState" : "manual",
@@ -214,10 +256,38 @@
       }
     },
     "More" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais"
+          }
+        }
+      }
     },
     "More Like This" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contenu Connexe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conteúdos Relacionados"
+          }
+        }
+      }
     },
     "Name" : {
       "extractionState" : "manual",
@@ -356,7 +426,21 @@
       }
     },
     "Profile picture updated!" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo de profil mise à jour !"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto de perfil atualizada!"
+          }
+        }
+      }
     },
     "Something went wrong, try again" : {
       "extractionState" : "manual",
@@ -410,7 +494,21 @@
       }
     },
     "Watch Trailer" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regarde la bande-annonce"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assistir Trailer"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
