@@ -11,53 +11,59 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        ZStack(alignment: .top) {
-            backgroundImage
-                .ignoresSafeArea()
-            
-            if let backdropPathURL = viewModel.contentDetails?.backdropPathURL {
-                CSImageView(url: backdropPathURL)
-                    .scaledToFit()
-                    .overlay(
-                        LinearGradient(gradient: Gradient(
-                            colors: [.clear, .Brand.firstGradient]), startPoint: .top, endPoint: .bottom
+        ScrollView(showsIndicators: false) {
+            ZStack(alignment: .top) {
+                backgroundImage
+                    .ignoresSafeArea()
+                
+                if let backdropPathURL = viewModel.contentDetails?.backdropPathURL {
+                    CSImageView(url: backdropPathURL)
+                        .scaledToFit()
+                        .overlay(
+                            LinearGradient(gradient: Gradient(
+                                colors: [.clear, .Brand.firstGradient]), startPoint: .top, endPoint: .bottom
+                            )
                         )
+                        .padding(.top, 0)
+                }
+                
+                VStack(alignment: .leading, spacing: 15) {
+                    headerView
+                    
+                    customDivider
+                    
+                    CSExpandableText(
+                        text: viewModel.contentDetails?.overview ?? "",
+                        lineLimit: 3
                     )
-                    .padding(.top, 0)
-            }
-            
-            VStack(alignment: .leading, spacing: 15) {
-                headerView
-                
-                customDivider
-                
-                CSExpandableText(
-                    text: viewModel.contentDetails?.overview ?? "",
-                    lineLimit: 3
-                )
-                .padding(.horizontal, 22)
-                
-                CSButton(title: "Watch Trailer".localized, icon: .init("play_trailer_icon"), style: .secondary) {
+                    .padding(.horizontal, 22)
                     
-                }
-                .padding(.horizontal, 22)
-                .padding(.top, 10)
-                
-                CSButton(title: "Add to Favorites".localized, icon: .init(systemName: "heart"), style: .secondary) {
+                    CSButton(title: "Watch Trailer".localized, icon: .init("play_trailer_icon"), style: .secondary) {
+                        
+                    }
+                    .padding(.horizontal, 22)
+                    .padding(.top, 10)
                     
+                    CSButton(title: "Add to Favorites".localized, icon: .init(systemName: "heart"), style: .secondary) {
+                        
+                    }
+                    .padding(.horizontal, 22)
+                    
+                    customDivider
+                    
+                    sectionsListView
                 }
-                .padding(.horizontal, 22)
                 
-                customDivider
-                
-                sectionsListView
+                loadingView
             }
-            
-            loadingView
+            .edgesIgnoringSafeArea(.all)
+            .onAppear(perform: viewModel.fetchData)
+            .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
         }
-        .edgesIgnoringSafeArea(.all)
-        .onAppear(perform: viewModel.fetchData)
-        .toast(message: $viewModel.toastMessage, type: viewModel.toastMessage?.type ?? .info)
+        .ignoresSafeArea()
+        .background(
+            Color.black
+        )
     }
     
     private var backgroundImage: some View {
