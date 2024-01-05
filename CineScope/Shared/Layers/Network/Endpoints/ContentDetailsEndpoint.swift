@@ -11,8 +11,6 @@ import SwiftUI
 enum ContentDetailsEndpoint {
     case fetchMovieDetails(id: String)
     case fetchTVShowDetails(id: String)
-    case fetchMoviesGenres
-    case fetchTVShowGenres
     case fetchRelatedMovies(id: String)
     case fetchRelatedTVShows(id: String)
 }
@@ -33,10 +31,6 @@ extension ContentDetailsEndpoint: Endpoint {
             return "movie/\(contentId)"
         case let .fetchTVShowDetails(contentId):
             return "tv/\(contentId)"
-        case .fetchMoviesGenres:
-            return "genre/movie/list"
-        case .fetchTVShowGenres:
-            return "genre/tv/list"
         case let .fetchRelatedMovies(id):
             return "movie/\(id)/similar"
         case let .fetchRelatedTVShows(id):
@@ -49,8 +43,6 @@ extension ContentDetailsEndpoint: Endpoint {
         case
                 .fetchMovieDetails,
                 .fetchTVShowDetails,
-                .fetchMoviesGenres,
-                .fetchTVShowGenres,
                 .fetchRelatedMovies,
                 .fetchRelatedTVShows:
             return .get
@@ -64,8 +56,6 @@ extension ContentDetailsEndpoint: Endpoint {
         case
                 .fetchMovieDetails,
                 .fetchTVShowDetails, 
-                .fetchMoviesGenres,
-                .fetchTVShowGenres,
                 .fetchRelatedMovies,
                 .fetchRelatedTVShows:
             params["language"] = Language.current.rawValue

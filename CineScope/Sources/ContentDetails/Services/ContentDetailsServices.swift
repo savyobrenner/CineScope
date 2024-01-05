@@ -30,22 +30,6 @@ class ContentDetailsServices: ContentDetailsServicesProtocol {
         )
     }
     
-    func fetchMoviesGenres(onSuccess: @escaping (Result<GenreList, CSError>) -> Void) {
-        network.request(
-            ContentDetailsEndpoint.fetchMoviesGenres,
-            expectedType: GenreList.self,
-            onSuccess
-        )
-    }
-    
-    func fetchTVShowGenres(onSuccess: @escaping (Result<GenreList, CSError>) -> Void) {
-        network.request(
-            ContentDetailsEndpoint.fetchTVShowGenres,
-            expectedType: GenreList.self,
-            onSuccess
-        )
-    }
-    
     func fetchRelatedMovies(for contentId: String, onSuccess: @escaping (Result<ListOfItems, CSError>) -> Void) {
         network.request(
             ContentDetailsEndpoint.fetchRelatedMovies(id: contentId),

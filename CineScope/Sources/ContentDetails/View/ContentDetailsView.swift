@@ -17,6 +17,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
             
             if let backdropPathURL = viewModel.contentDetails?.backdropPathURL {
                 CSImageView(url: backdropPathURL)
+                    .scaledToFit()
                     .overlay(
                         LinearGradient(gradient: Gradient(
                             colors: [.clear, .Brand.firstGradient]), startPoint: .top, endPoint: .bottom
@@ -79,6 +80,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
             HStack(alignment: .center, spacing: 20) {
                 if let posterImageURL = viewModel.contentDetails?.posterPathURL {
                     CSImageView(url: posterImageURL)
+                        .scaledToFit()
                         .cornerRadius(10, corners: .allCorners)
                         .frame(width: 110)
                         .padding(.top, 100)
@@ -111,7 +113,7 @@ struct ContentDetailsView<ViewModel: ContentDetailsViewModelProtocol>: View {
                     )
                     .multilineTextAlignment(.leading)
                     
-                    CSStarRatingView(rating: 2)
+                    CSStarRatingView(rating: viewModel.startRating)
                     
                     CSText(
                         text: viewModel.genresString,

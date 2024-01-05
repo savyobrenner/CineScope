@@ -32,8 +32,10 @@ final class ContentDetailsViewModel: ContentDetailsViewModelProtocol {
         return formattedGenres()
     }
     
-    private var contentGenres: [Genre] = []
-    
+    var startRating: Int {
+        return formattedRating()
+    }
+        
     init(
         router: Router,
         contentDetailsServices: ContentDetailsServicesProtocol,
@@ -49,11 +51,6 @@ final class ContentDetailsViewModel: ContentDetailsViewModelProtocol {
     func fetchData() {
         isLoading = true
         let fetchGroup = DispatchGroup()
-        
-        fetchGroup.enter()
-        fetchContentGenres {
-            fetchGroup.leave()
-        }
         
         fetchGroup.enter()
         fetchContentDetails {
@@ -72,31 +69,6 @@ final class ContentDetailsViewModel: ContentDetailsViewModelProtocol {
 }
 
 private extension ContentDetailsViewModel {
-    func fetchContentGenres(completion: @escaping () -> Void) {
-        guard isMovie else {
-            contentDetailsServices.fetchTVShowGenres { [weak self] result in
-                completion()
-                switch result {
-                case .success(let success):
-                    self?.contentGenres = success.genres ?? []
-                case .failure(let error):
-                    self?.toastMessage = .init(message: error.localizedDescription, type: .error)
-                }
-            }
-            return
-        }
-        
-        contentDetailsServices.fetchMoviesGenres { [weak self] result in
-            completion()
-            switch result {
-            case .success(let success):
-                self?.contentGenres = success.genres ?? []
-            case .failure(let error):
-                self?.toastMessage = .init(message: error.localizedDescription, type: .error)
-            }
-        }
-    }
-    
     func fetchContentDetails(completion: @escaping () -> Void) {
         guard isMovie else {
             contentDetailsServices.fetchTVShowsDetails(for: contentId) { [weak self] result in
@@ -152,7 +124,7 @@ private extension ContentDetailsViewModel {
             let section = SectionModel(
                 title: "More Like This".localized,
                 items: contents,
-                isHorizontal: true,
+                isHorizontal: false,
                 isMovie: isMovie)
             sections.append(section)
         } else {
@@ -183,10 +155,14 @@ private extension ContentDetailsViewModel {
     }
 
     func formattedGenres() -> String {
-        guard let ids = contentDetails?.genreIDS else { return "N/A" }
+        guard let genres = contentDetails?.genres else { return "N/A" }
         
-        let genres = contentGenres.filter { ids.contains($0.id ?? 0) }
         let firstThreeGenres = genres.prefix(3)
         return firstThreeGenres.map { $0.name ?? "" }.joined(separator: " - ")
+    }
+    
+    func formattedRating() -> Int {
+        guard let rating = contentDetails?.voteAverage else { return 0 }
+        return Int(rating / 2.0)
     }
 }

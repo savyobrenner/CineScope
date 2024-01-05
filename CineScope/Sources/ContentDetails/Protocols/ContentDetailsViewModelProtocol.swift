@@ -16,5 +16,6 @@ protocol ContentDetailsViewModelProtocol: ObservableObject {
     var runtime: String { get }
     var releaseDate: String { get }
     var genresString: String { get }
+    var startRating: Int { get }
     func fetchData()
 }
