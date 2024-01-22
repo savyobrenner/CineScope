@@ -51,7 +51,6 @@ struct MediaModel: Codable, Identifiable, Equatable {
     }
 }
 
-
 // MARK: - Genre
 struct Genre: Codable, Equatable {
     let id: Int?

@@ -24,7 +24,8 @@ enum AppEnvironment {
     }
     
     static var userToken: String {
-        return "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZjMyZDYyNDFkNjk4YTNjODJlOTVjY2JlNDg1M2Q0MiIsInN1YiI6IjViZjQ5NDhiMGUwYTI2MzlkNjAzYjYzYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IyRdsYNNTqRIuIOstkiXdCsKZZxbmAyy-xXj2DN6l2s"
+        // Add API key
+        return ""
     }
     
     static var currentLanguageURLParameter: String {
