@@ -8,7 +8,7 @@
   </tr>
 </table>
 
-The **CineScope** app is a simple SwiftUI-based iOS application that allows users to explore movies and TV shows using The Movie Database (TMDb) API. It follows the MVVM architectural pattern and incorporates various technologies and libraries, such as Moya, Firebase, and Factory for dependency injection. The project also uses Swift Package Manager (SPM) for managing external libraries.
+The **CineScope** app is a simple SwiftUI-based iOS application that allows users to explore movies and TV shows using The Movie Database (TMDb) API. It follows the MVVM architectural pattern and incorporates some libraries, such as Moya, Firebase, and Factory for dependency injection. The project also uses Swift Package Manager (SPM) for managing external libraries.
 
 ## Installation
 
