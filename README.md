@@ -17,6 +17,11 @@ The **CineScope** app is a simple SwiftUI-based iOS application that allows user
 3. Go to ***AppEnvironment*** file and add your ***TMDb API-KEY***
 4. Resolve the dependencies
 5. Run
-   
+
+## Supported Languages
+- English
+- Portuguese
+- French
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
